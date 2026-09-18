@@ -55,11 +55,34 @@ body {
 
 /* Diagonal Ribbon Utilities */
 .ribbon-diagonal-left {
-  transform: rotate(-3deg);
+  transform: rotate(-3.5deg);
 }
 
 .ribbon-diagonal-right {
-  transform: rotate(3deg);
+  transform: rotate(3.5deg);
+}
+
+/* Hardware-accelerated continuous marquee */
+@keyframes continuous-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-ribbon {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: continuous-marquee 30s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-ribbon {
+    animation: none !important;
+  }
 }
 
 /* Smooth custom scrollbars */
@@ -76,4 +99,5 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #3f3f46;
 }
+
 
