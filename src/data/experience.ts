@@ -6,37 +6,38 @@ export const EXPERIENCES: ExperienceItem[] = [
     period: '2022 — Present',
     role: 'B.Tech in Computer Science & Engineering',
     organization: 'Undergraduate Program',
-    badge: 'Senior Year // GPA 8.8/10',
+    badge: 'Senior Undergraduate',
     description: [
-      'Core focus on Distributed Systems, Operating Systems, Machine Learning, and Algorithms.',
-      'Active researcher in LLM inference optimization and multimodal retrieval algorithms.',
-      'Lead technical organizer for campus developer circles and hackathon mentoring.'
+      'Comprehensive coursework in Data Structures, Algorithms, DBMS, Operating Systems, Computer Networks, and Machine Learning.',
+      'Active builder developing end-to-end full-stack systems, data engineering pipelines, and LLM-assisted applications.',
+      'Active participant in collegiate coding competitions and open-source software explorations.'
     ],
-    tags: ['Distributed Systems', 'Computer Architecture', 'Deep Learning', 'Data Structures']
+    tags: ['Data Structures & Algorithms', 'DBMS & SQL', 'Operating Systems', 'System Design Basics']
   },
   {
-    id: 'ai-intern',
-    period: '2024 — Summer',
-    role: 'Software Engineering / AI Intern',
-    organization: 'Technology Research Lab',
-    badge: 'Summer Internship',
+    id: 'assetflow-hackathon',
+    period: '2024',
+    role: 'Solo Hackathon Builder // AssetFlow',
+    organization: '36-Hour Hackathon',
+    badge: 'Solo Project',
     description: [
-      'Engineered an internal RAG knowledge engine reducing document query latency from 4.2s to 280ms.',
-      'Containerized and deployed embedding models on NVIDIA T4 GPUs using Triton Inference Server.',
-      'Built automated data curation pipelines cleaning 500k+ unstructured enterprise files.'
+      'Engineered AssetFlow entirely solo in 36 hours — a full-stack MERN enterprise asset tracking platform with JWT-based role management (RBAC).',
+      'Implemented real-time asset lifecycle state transitions and dynamic audit logging for hardware check-ins/checkouts.',
+      'Designed a responsive, high-contrast dashboard with Tailwind CSS and rapid state management.'
     ],
-    tags: ['Python', 'Docker', 'FastAPI', 'Qdrant', 'Triton Server']
+    tags: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Role-Based Access Control']
   },
   {
-    id: 'hackathons',
+    id: 'campusloop-hackathon',
     period: '2023 — 2024',
-    role: 'National Hackathon Winner & Finalist',
-    organization: 'Competitive Engineering',
-    badge: '1st Place Winner',
+    role: 'Frontend Lead & Core Contributor // CampusLoop',
+    organization: 'Collegiate Team Hackathon',
+    badge: 'Team Hackathon',
     description: [
-      'Won 1st prize at 36-hour national AI hackathon building an autonomous multi-modal agent for code refactoring.',
-      'Authored open-source developer tooling with 200+ stars across GitHub repositories.'
+      'Led UI architecture and API integration for CampusLoop, a peer-to-peer campus hardware and device lending platform.',
+      'Engineered conflict-free booking mechanisms to eliminate double-reservations for shared campus tech equipment.',
+      'Spearheaded sprint planning and Git branch management within a 4-person engineering team.'
     ],
-    tags: ['Open Source', 'Hackathons', 'Multi-Agent Systems', 'WebSockets']
+    tags: ['React', 'TypeScript', 'API Integration', 'Team Collaboration', 'Git Workflow']
   }
 ]

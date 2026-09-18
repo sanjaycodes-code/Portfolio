@@ -2,47 +2,47 @@ import type { SkillCategory } from '../types'
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    id: 'ai-ml',
-    categoryName: 'AI & Machine Learning',
-    iconName: 'Cpu',
-    description: 'Model deployment, vector pipelines, speculative decoding, and fine-tuning.',
+    id: 'ai-data',
+    categoryName: 'AI & Data Engineering',
+    iconName: 'BrainCircuit',
+    description: 'LLM orchestration, vector embeddings, data pipelines, and analytical intelligence.',
     skills: [
-      { name: 'PyTorch', isPrimary: true },
-      { name: 'Transformers / HF', isPrimary: true },
-      { name: 'vLLM & TensorRT-LLM', isPrimary: true },
-      { name: 'CUDA / Triton Kernels', isPrimary: false },
-      { name: 'Vector DBs (Qdrant, Pinecone)', isPrimary: true },
-      { name: 'RAG & Semantic Cache', isPrimary: true },
-      { name: 'LoRA & QLoRA Fine-tuning', isPrimary: false }
+      { name: 'Python', isPrimary: true },
+      { name: 'LangChain & LLM APIs', isPrimary: true },
+      { name: 'Vector Search & Embeddings', isPrimary: true },
+      { name: 'SQL (PostgreSQL / MySQL)', isPrimary: true },
+      { name: 'Pandas & NumPy', isPrimary: true },
+      { name: 'Power BI / Data Viz', isPrimary: true },
+      { name: 'FastAPI', isPrimary: false }
     ]
   },
   {
-    id: 'systems-backend',
-    categoryName: 'Systems & Backend',
+    id: 'fullstack-systems',
+    categoryName: 'Full Stack & Backend Systems',
     iconName: 'Server',
-    description: 'Distributed consensus, concurrent services, microservices, and storage engines.',
+    description: 'Scalable web architecture, state management, REST APIs, and database modeling.',
     skills: [
-      { name: 'Python (FastAPI, AsyncIO)', isPrimary: true },
-      { name: 'Go / Rust Basics', isPrimary: true },
-      { name: 'Node.js & TypeScript', isPrimary: true },
-      { name: 'PostgreSQL & Redis', isPrimary: true },
-      { name: 'Docker & Linux Systems', isPrimary: true },
-      { name: 'gRPC & Protocol Buffers', isPrimary: false },
-      { name: 'CI/CD & Git Workflows', isPrimary: false }
+      { name: 'React (Hooks, Modern Patterns)', isPrimary: true },
+      { name: 'TypeScript / JavaScript', isPrimary: true },
+      { name: 'Node.js & Express', isPrimary: true },
+      { name: 'MongoDB (Mongoose)', isPrimary: true },
+      { name: 'Tailwind CSS', isPrimary: true },
+      { name: 'REST API Design & RBAC', isPrimary: true },
+      { name: 'Framer Motion', isPrimary: false }
     ]
   },
   {
-    id: 'frontend-architecture',
-    categoryName: 'Frontend & UI Engineering',
-    iconName: 'Layout',
-    description: 'Type-safe interfaces, high-performance animations, and design engineering.',
+    id: 'cs-foundations',
+    categoryName: 'Core CS & Engineering Rigor',
+    iconName: 'Code2',
+    description: 'Undergraduate computer science foundations and software engineering discipline.',
     skills: [
-      { name: 'React 19 / Next.js', isPrimary: true },
-      { name: 'TypeScript', isPrimary: true },
-      { name: 'Tailwind CSS', isPrimary: true },
-      { name: 'Framer Motion', isPrimary: true },
-      { name: 'State Architecture', isPrimary: false },
-      { name: 'WebSockets & SSE', isPrimary: false }
+      { name: 'Data Structures & Algorithms', isPrimary: true },
+      { name: 'Object-Oriented Programming (OOP)', isPrimary: true },
+      { name: 'Database Management Systems (DBMS)', isPrimary: true },
+      { name: 'Git & Version Control', isPrimary: true },
+      { name: 'Operating Systems & Linux', isPrimary: false },
+      { name: 'C / C++ (Academic)', isPrimary: false }
     ]
   }
 ]
