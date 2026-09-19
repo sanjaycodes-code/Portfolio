@@ -21,7 +21,6 @@ export const PROJECTS: Project[] = [
     techStack: ['Python', 'FastAPI', 'LangChain / LLM', 'React', 'Tailwind CSS'],
     category: 'ai-ml',
     githubUrl: 'https://github.com/sanjay',
-    liveDemoUrl: 'https://resume-analyzer.demo',
     compositionTiltDeg: -2.0
   },
   {
@@ -66,6 +65,7 @@ export const PROJECTS: Project[] = [
     techStack: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Tailwind CSS'],
     category: 'fullstack',
     githubUrl: 'https://github.com/sanjay',
+    liveDemoUrl: 'https://campus-loop-ten.vercel.app/',
     compositionTiltDeg: -1.8
   },
   {

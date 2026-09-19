@@ -3,7 +3,8 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { useIsMobile } from '../../hooks/useIsMobile'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 import type { Project } from '../../types'
-import { Network, ShieldCheck, Sparkles, BarChart3 } from 'lucide-react'
+import { Network, ShieldCheck, Sparkles, BarChart3, ExternalLink } from 'lucide-react'
+
 
 
 
@@ -213,9 +214,23 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </span>
           </div>
 
-          <span className="font-mono text-[10px] text-[#A1A1AA] px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.04] uppercase">
-            {project.category}
-          </span>
+          <div className="flex items-center gap-2">
+            {project.liveDemoUrl && (
+              <a
+                href={project.liveDemoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="inline-flex items-center gap-1 font-mono text-[10px] text-[#F97316] bg-[#F97316]/10 hover:bg-[#F97316]/20 border border-[#F97316]/30 px-2 py-0.5 rounded transition-colors"
+              >
+                <span>LIVE DEMO</span>
+                <ExternalLink className="w-2.5 h-2.5" />
+              </a>
+            )}
+            <span className="font-mono text-[10px] text-[#A1A1AA] px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.04] uppercase">
+              {project.category}
+            </span>
+          </div>
         </div>
 
         {/* Project Specific Technical Visual Container */}
