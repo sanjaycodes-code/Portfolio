@@ -12,56 +12,83 @@ import {
 import { SOCIAL_LINKS } from '../../data/socials'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 
-const INQUIRY_TEMPLATES = [
+interface InquiryTemplate {
+  id: string
+  label: string
+  subject: string
+  bodyText: string
+}
+
+const INQUIRY_TEMPLATES: InquiryTemplate[] = [
   {
     id: 'internship',
     label: 'Internship Opportunity',
-    subject: 'Software / AI Internship Opportunity',
-    body: 'Hi Sanjay,%0D%0A%0D%0AI came across your portfolio and would like to discuss an engineering internship opportunity with our team.%0D%0A%0D%0ARole:%20%0D%0ACompany:%20'
+    subject: 'Software / AI Engineering Internship Opportunity',
+    bodyText:
+      'Hi Sanjay,\n\nI came across your portfolio and would like to discuss an engineering internship opportunity with our team.\n\nRole: \nCompany: \nLocation / Mode: '
   },
   {
     id: 'tech-discussion',
     label: 'Technical Discussion',
-    subject: 'Question on Architecture / Projects',
-    body: 'Hi Sanjay,%0D%0A%0D%0AI saw your work on CampusLoop / AI Resume Analyzer and wanted to connect regarding...'
+    subject: 'Discussion on Systems & AI Architecture',
+    bodyText:
+      'Hi Sanjay,\n\nI reviewed your work on CampusLoop, AssetFlow, and the AI Resume Analyzer. I would like to connect to discuss...'
   },
   {
     id: 'general',
     label: 'General Connect',
-    subject: 'Connecting via Portfolio',
-    body: 'Hi Sanjay,%0D%0A%0D%0AWanted to reach out and connect after reviewing your projects and self-directed engineering track.'
+    subject: 'Connecting via Developer Portfolio',
+    bodyText:
+      'Hi Sanjay,\n\nReaching out to connect after reviewing your portfolio and self-directed software and AI track.'
   }
 ]
 
 export function Footer() {
   const prefersReducedMotion = useReducedMotion()
-  const [copied, setCopied] = useState(false)
-  const [selectedTemplate, setSelectedTemplate] = useState(INQUIRY_TEMPLATES[0])
+  const [emailCopied, setEmailCopied] = useState(false)
+  const [draftCopied, setDraftCopied] = useState(false)
+  const [selectedTemplate, setSelectedTemplate] = useState<InquiryTemplate>(INQUIRY_TEMPLATES[0])
 
   const emailSocial = SOCIAL_LINKS.find((s) => s.type === 'email')
   const emailAddress = emailSocial ? emailSocial.username : 'sanjaykadivendi13@gmail.com'
 
-  const handleCopyEmail = async () => {
+  const copyToClipboard = async (text: string): Promise<boolean> => {
     try {
       if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(emailAddress)
+        await navigator.clipboard.writeText(text)
+        return true
       } else {
-        // Fallback for non-https / testing environments
         const textArea = document.createElement('textarea')
-        textArea.value = emailAddress
+        textArea.value = text
         textArea.style.position = 'fixed'
         textArea.style.left = '-999999px'
         textArea.style.top = '-999999px'
         document.body.appendChild(textArea)
         textArea.focus()
         textArea.select()
-        document.execCommand('copy')
+        const successful = document.execCommand('copy')
         textArea.remove()
+        return successful
       }
-      setCopied(true)
-      setTimeout(() => setCopied(false), 3000)
     } catch {
-      setCopied(false)
+      return false
+    }
+  }
+
+  const handleCopyEmail = async () => {
+    const success = await copyToClipboard(emailAddress)
+    if (success) {
+      setEmailCopied(true)
+      setTimeout(() => setEmailCopied(false), 3000)
+    }
+  }
+
+  const handleCopyDraft = async () => {
+    const fullDraft = `To: ${emailAddress}\nSubject: ${selectedTemplate.subject}\n\n${selectedTemplate.bodyText}`
+    const success = await copyToClipboard(fullDraft)
+    if (success) {
+      setDraftCopied(true)
+      setTimeout(() => setDraftCopied(false), 3000)
     }
   }
 
@@ -72,9 +99,10 @@ export function Footer() {
     })
   }
 
+  // Pure, standard mailto without new-tab hazards
   const mailtoHref = `mailto:${emailAddress}?subject=${encodeURIComponent(
     selectedTemplate.subject
-  )}&body=${selectedTemplate.body}`
+  )}&body=${encodeURIComponent(selectedTemplate.bodyText)}`
 
   return (
     <footer
@@ -142,12 +170,12 @@ export function Footer() {
                     onClick={handleCopyEmail}
                     type="button"
                     aria-label="Copy email address to clipboard"
-                    className="font-mono text-xs px-3 py-1.5 rounded-lg border border-white/[0.1] bg-white/[0.04] text-[#EDEDED] hover:text-white hover:bg-white/[0.08] focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all flex items-center gap-1.5"
+                    className="font-mono text-xs px-3.5 py-1.5 rounded-lg border border-white/[0.15] bg-white/[0.06] hover:bg-white/[0.12] text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
                   >
-                    {copied ? (
+                    {emailCopied ? (
                       <>
                         <Check className="w-3.5 h-3.5 text-emerald-400" />
-                        <span className="text-emerald-400 font-medium">COPIED</span>
+                        <span className="text-emerald-400 font-semibold">COPIED EMAIL!</span>
                       </>
                     ) : (
                       <>
@@ -158,45 +186,39 @@ export function Footer() {
                   </button>
 
                   <a
-                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}&su=${encodeURIComponent(
-                      selectedTemplate.subject
-                    )}&body=${selectedTemplate.body}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-mono text-xs px-3 py-1.5 rounded-lg border border-white/[0.15] bg-white/[0.06] hover:bg-white/[0.12] text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all flex items-center gap-1.5 shadow-sm"
-                  >
-                    <span>OPEN GMAIL</span>
-                    <ExternalLink className="w-3 h-3 text-[#A1A1AA]" />
-                  </a>
-
-                  <a
                     href={mailtoHref}
-                    className="font-mono text-xs px-3 py-1.5 rounded-lg border border-white/[0.08] bg-transparent hover:bg-white/[0.04] text-[#A1A1AA] hover:text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all hidden sm:flex items-center gap-1.5"
+                    aria-label="Launch default email client"
+                    className="font-mono text-xs px-3 py-1.5 rounded-lg border border-white/[0.08] bg-transparent hover:bg-white/[0.04] text-[#A1A1AA] hover:text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all flex items-center gap-1.5"
                   >
-                    <span>DEFAULT APP</span>
+                    <span>LAUNCH MAIL APP</span>
+                    <ExternalLink className="w-3 h-3 text-[#A1A1AA]" />
                   </a>
                 </div>
               </div>
             </div>
 
-            {/* Subject Preset Picker */}
+            {/* Subject Preset Picker & Pre-formatted Draft */}
             <div>
               <div className="flex items-center gap-1.5 mb-2.5">
                 <MessageSquare className="w-3.5 h-3.5 text-[#A1A1AA]" />
                 <span className="font-mono text-xs text-[#A1A1AA] uppercase tracking-wider">
-                  MAILTO INTENT PRESETS (OPENS PRE-FORMATTED DRAFT)
+                  PRE-FORMATTED INQUIRY TEMPLATES
                 </span>
               </div>
 
-              <div className="flex flex-wrap gap-2">
+              {/* Template Buttons */}
+              <div className="flex flex-wrap gap-2 mb-4">
                 {INQUIRY_TEMPLATES.map((tmpl) => (
                   <button
                     key={tmpl.id}
                     type="button"
-                    onClick={() => setSelectedTemplate(tmpl)}
-                    className={`font-mono text-xs px-3 py-1.5 rounded border transition-all ${
+                    onClick={() => {
+                      setSelectedTemplate(tmpl)
+                      setDraftCopied(false)
+                    }}
+                    className={`font-mono text-xs px-3 py-1.5 rounded border transition-all cursor-pointer ${
                       selectedTemplate.id === tmpl.id
-                        ? 'border-[#F97316]/50 bg-white/[0.05] text-white font-medium'
+                        ? 'border-[#F97316]/50 bg-white/[0.06] text-white font-medium shadow-sm'
                         : 'border-white/[0.06] bg-transparent text-[#A1A1AA] hover:text-white hover:border-white/[0.15]'
                     } focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none`}
                   >
@@ -205,8 +227,39 @@ export function Footer() {
                 ))}
               </div>
 
+              {/* Live Draft Preview Box */}
+              <div className="p-4 rounded-xl bg-[#080809] border border-white/[0.06] space-y-2">
+                <div className="flex items-center justify-between gap-2 border-b border-white/[0.05] pb-2">
+                  <span className="font-mono text-[11px] text-[#A1A1AA]">
+                    <span className="text-white/40">Subject:</span> {selectedTemplate.subject}
+                  </span>
+
+                  <button
+                    type="button"
+                    onClick={handleCopyDraft}
+                    className="font-mono text-[11px] px-2.5 py-1 rounded border border-white/[0.1] bg-white/[0.04] text-[#EDEDED] hover:text-white hover:bg-white/[0.08] flex items-center gap-1.5 transition-all cursor-pointer shrink-0"
+                  >
+                    {draftCopied ? (
+                      <>
+                        <Check className="w-3 h-3 text-emerald-400" />
+                        <span className="text-emerald-400 font-medium">COPIED DRAFT!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3 h-3 text-[#A1A1AA]" />
+                        <span>COPY DRAFT</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                <p className="font-mono text-xs text-[#A1A1AA] whitespace-pre-line leading-relaxed">
+                  {selectedTemplate.bodyText}
+                </p>
+              </div>
+
               <p className="font-mono text-[11px] text-[#A1A1AA] mt-3">
-                ✦ No silent backend forms. Pre-formats your inquiry directly into Gmail or your native email client.
+                ✦ Zero blank pages. Click &ldquo;Copy Draft&rdquo; to paste directly into your favorite email app (Gmail, Outlook, Apple Mail), or launch your system mail client.
               </p>
             </div>
           </div>
@@ -240,12 +293,12 @@ export function Footer() {
                             {link.label}
                           </span>
                           <span className="font-mono text-[11px] text-[#A1A1AA]">
-                            {copied ? 'COPIED TO CLIPBOARD' : link.username}
+                            {emailCopied ? 'COPIED TO CLIPBOARD' : link.username}
                           </span>
                         </div>
                       </div>
                       <div className="flex items-center gap-1.5 font-mono text-xs text-[#A1A1AA] group-hover:text-white">
-                        {copied ? (
+                        {emailCopied ? (
                           <Check className="w-4 h-4 text-emerald-400" />
                         ) : (
                           <Copy className="w-4 h-4 text-[#A1A1AA] group-hover:text-white transition-all" />
@@ -291,7 +344,7 @@ export function Footer() {
                 </span>
               </div>
               <p className="font-['Space_Grotesk'] text-xs text-[#A1A1AA] leading-relaxed">
-                Generally active during IST engineering hours. Fast response on email and LinkedIn for internship screenings or technical code discussions.
+                Generally active during IST engineering hours. Fast response on email, LinkedIn, and X for internship screenings or technical discussions.
               </p>
             </div>
           </div>
