@@ -41,7 +41,7 @@ export function TechMatrix() {
           <span className="font-mono text-xs text-[#8E8E98] tracking-widest uppercase block mb-2">
             // 02 TECHNICAL MATRIX
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Syne'] text-[#EDEDED] tracking-tight leading-[1.05]">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-['Syne'] text-[#EDEDED] tracking-[0.02em] leading-[1.02] sm:leading-[0.98]">
             VERIFIED{' '}
             <span className="font-['Instrument_Serif'] italic font-normal text-white lowercase tracking-normal">
               stack
@@ -72,7 +72,7 @@ export function TechMatrix() {
               <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/[0.06]">
                 <div className="flex items-center gap-2.5">
                   {getCategoryIcon(cat.id)}
-                  <h3 className="font-['Syne'] text-xl font-bold text-[#EDEDED] group-hover:text-white transition-colors">
+                  <h3 className="font-['Syne'] text-xl font-bold tracking-[0.02em] text-[#EDEDED] group-hover:text-white transition-colors">
                     {cat.categoryName}
                   </h3>
                 </div>

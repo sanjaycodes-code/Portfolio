@@ -43,7 +43,7 @@ export function FeaturedProjects() {
           <span className="font-mono text-xs text-[#8E8E98] tracking-widest uppercase block mb-2">
             // 01 SELECTED WORKS
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Syne'] text-[#EDEDED] tracking-tight leading-[1.05]">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-['Syne'] text-[#EDEDED] tracking-[0.02em] leading-[1.02] sm:leading-[0.98]">
             ARCHITECTURAL{' '}
             <span className="font-['Instrument_Serif'] italic font-normal text-white lowercase tracking-normal">
               case studies
@@ -101,7 +101,7 @@ export function FeaturedProjects() {
                 </div>
 
                 {/* Project Title */}
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-['Syne'] text-[#EDEDED] tracking-tight leading-snug">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-['Syne'] text-[#EDEDED] tracking-[0.02em] leading-snug">
                   {project.title}
                 </h3>
 

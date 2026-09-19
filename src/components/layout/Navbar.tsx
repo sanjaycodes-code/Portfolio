@@ -51,7 +51,7 @@ export function Navbar() {
             href="#"
             className="flex items-center gap-2.5 group text-[#EDEDED] hover:text-white transition-colors"
           >
-            <span className="font-['Syne'] font-extrabold text-sm tracking-tight">
+            <span className="font-['Syne'] font-bold text-sm tracking-[0.02em]">
               SANJAY
             </span>
             <span className="hidden sm:inline-block font-mono text-[10px] text-[#8E8E98] tracking-wider border-l border-white/[0.08] pl-2.5">
@@ -122,7 +122,7 @@ export function Navbar() {
             {/* Top Bar inside Drawer */}
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="font-['Syne'] font-bold text-base text-[#EDEDED]">
+                <span className="font-['Syne'] font-bold text-base tracking-[0.02em] text-[#EDEDED]">
                   SANJAY
                 </span>
                 <span className="font-mono text-xs text-[#8E8E98]">

@@ -135,7 +135,7 @@ export function Footer() {
           <span className="font-mono text-xs text-[#A1A1AA] tracking-widest uppercase block mb-2">
             // 05 INITIATE CONNECTION &amp; FOOTER
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Syne'] text-[#EDEDED] tracking-tight leading-[1.05]">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-['Syne'] text-[#EDEDED] tracking-[0.02em] leading-[1.02] sm:leading-[0.98]">
             AVAILABLE FOR{' '}
             <span className="font-['Instrument_Serif'] italic font-normal text-white lowercase tracking-normal">
               high-impact

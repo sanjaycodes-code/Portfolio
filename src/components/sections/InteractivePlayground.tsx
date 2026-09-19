@@ -149,7 +149,7 @@ export function InteractivePlayground() {
           <span className="font-mono text-xs text-[#8E8E98] tracking-widest uppercase block mb-2">
             // 04 INTERACTIVE LABORATORY
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Syne'] text-[#EDEDED] tracking-tight leading-[1.05]">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-['Syne'] text-[#EDEDED] tracking-[0.02em] leading-[1.02] sm:leading-[0.98]">
             ALGORITHMIC{' '}
             <span className="font-['Instrument_Serif'] italic font-normal text-white lowercase tracking-normal">
               telemetry
@@ -316,7 +316,7 @@ export function InteractivePlayground() {
                     </div>
 
                     <div className="flex items-baseline gap-3 mb-3">
-                      <span className="text-4xl sm:text-5xl font-extrabold font-['Syne'] text-white">
+                      <span className="text-4xl sm:text-5xl font-bold font-['Syne'] tracking-[0.02em] text-white">
                         {analysis.matchScore}%
                       </span>
                       <span className="font-mono text-xs text-[#A1A1AA]">

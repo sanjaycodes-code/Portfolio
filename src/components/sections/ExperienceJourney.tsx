@@ -41,7 +41,7 @@ export function ExperienceJourney() {
           <span className="font-mono text-xs text-[#8E8E98] tracking-widest uppercase block mb-2">
             // 03 EXPERIENCE &amp; JOURNEY
           </span>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Syne'] text-[#EDEDED] tracking-tight leading-[1.05]">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-['Syne'] text-[#EDEDED] tracking-[0.02em] leading-[1.02] sm:leading-[0.98]">
             ACADEMIC{' '}
             <span className="font-['Instrument_Serif'] italic font-normal text-white lowercase tracking-normal">
               foundations
@@ -102,7 +102,7 @@ export function ExperienceJourney() {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl sm:text-2xl font-bold font-['Syne'] text-[#EDEDED] group-hover:text-white transition-colors mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold font-['Syne'] tracking-[0.02em] text-[#EDEDED] group-hover:text-white transition-colors mb-4">
                 {item.title}
               </h3>
 
