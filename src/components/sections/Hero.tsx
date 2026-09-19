@@ -132,9 +132,9 @@ export function Hero() {
             className="mt-10 flex items-center gap-5 text-[#A1A1AA]"
           >
             <a
-              href="https://github.com/sanjay"
+              href="https://github.com/sanjaycodes-code"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="GitHub Profile"
               className="hover:text-white transition-colors p-2 rounded-full hover:bg-white/[0.04]"
             >

@@ -20,7 +20,8 @@ export const PROJECTS: Project[] = [
     ],
     techStack: ['Python', 'FastAPI', 'LangChain / LLM', 'React', 'Tailwind CSS'],
     category: 'ai-ml',
-    githubUrl: 'https://github.com/sanjay',
+    githubUrl: 'https://github.com/sanjaycodes-code/AI-Resume-Analyzer',
+    liveDemoUrl: 'https://ai-resume-analyzer-ashy-pi-13.vercel.app/',
     compositionTiltDeg: -2.0
   },
   {
@@ -42,7 +43,7 @@ export const PROJECTS: Project[] = [
     ],
     techStack: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Tailwind CSS'],
     category: 'fullstack',
-    githubUrl: 'https://github.com/sanjay',
+    githubUrl: 'https://github.com/sanjaycodes-code',
     compositionTiltDeg: 2.2
   },
   {
@@ -64,7 +65,7 @@ export const PROJECTS: Project[] = [
     ],
     techStack: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Tailwind CSS'],
     category: 'fullstack',
-    githubUrl: 'https://github.com/sanjay',
+    githubUrl: 'https://github.com/sanjaycodes-code/Campus_Loop',
     liveDemoUrl: 'https://campus-loop-ten.vercel.app/',
     compositionTiltDeg: -1.8
   },
@@ -87,7 +88,7 @@ export const PROJECTS: Project[] = [
     ],
     techStack: ['SQL (PostgreSQL)', 'Python (Pandas)', 'Power BI', 'ETL Pipelines'],
     category: 'systems',
-    githubUrl: 'https://github.com/sanjay',
+    githubUrl: 'https://github.com/sanjaycodes-code',
     compositionTiltDeg: 1.6
   }
 ]
