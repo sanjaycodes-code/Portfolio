@@ -3,8 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { useIsMobile } from '../../hooks/useIsMobile'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 import type { Project } from '../../types'
-import { Network, ShieldCheck, Sparkles, BarChart3, ExternalLink } from 'lucide-react'
-
+import { AlertCircle, Terminal, ExternalLink, BarChart3, Bot, RefreshCw } from 'lucide-react'
 
 
 
@@ -60,32 +59,29 @@ export function ProjectCard({ project }: ProjectCardProps) {
     }
   }
 
-  // Render project-specific technical visual artifact
+  // Render authentic project-specific technical visual artifact (zero fabricated numbers)
   const renderProjectVisual = () => {
     switch (project.id) {
       case 'ai-resume-analyzer':
         return (
-          <div className="space-y-4 font-mono text-xs">
-            {/* Semantic Cosine Similarity Gauge */}
-            <div className="p-3.5 rounded-lg bg-black/40 border border-white/[0.06]">
-              <div className="flex items-center justify-between text-[#A1A1AA] text-[11px] mb-2">
-                <span className="flex items-center gap-1.5 text-[#EDEDED]">
-                  <Sparkles className="w-3 h-3 text-[#F97316]" />
-                  SEMANTIC COSINE MATCH
-                </span>
-                <span className="text-[#F97316] font-bold">92.4%</span>
+          <div className="space-y-3 font-mono text-xs">
+            {/* Tooling & Framework Banner */}
+            <div className="p-3 rounded-lg bg-black/40 border border-white/[0.06] flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Bot className="w-3.5 h-3.5 text-[#F97316]" />
+                <span className="text-[#EDEDED] text-[11px]">BUILD ENGINE: GOOGLE ANTIGRAVITY</span>
               </div>
-              <div className="w-full h-1.5 bg-white/[0.06] rounded-full overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-white/40 to-[#F97316] w-[92%] rounded-full" />
-              </div>
+              <span className="px-2 py-0.5 rounded bg-white/[0.05] text-[10px] text-amber-300 border border-amber-300/20">
+                ACTIVE BUILD
+              </span>
             </div>
 
-            {/* Extracted Schema Tree snippet */}
-            <div className="p-3.5 rounded-lg bg-black/40 border border-white/[0.06] text-[11px] text-[#A1A1AA] leading-relaxed">
-              <div className="text-white/40 mb-1">// Extracted AST JSON Schema</div>
-              <div><span className="text-emerald-400">"candidate"</span>: <span className="text-white">"Sanjay"</span>,</div>
-              <div><span className="text-emerald-400">"verified_domains"</span>: [<span className="text-amber-200">"Distributed Systems"</span>, <span className="text-amber-200">"LLMs"</span>],</div>
-              <div><span className="text-emerald-400">"ats_gap_diagnostics"</span>: <span className="text-white">0 warnings</span></div>
+            {/* Architecture Overview */}
+            <div className="p-3.5 rounded-lg bg-black/40 border border-white/[0.06] text-[11px] text-[#A1A1AA] space-y-1.5 leading-relaxed">
+              <div className="text-white/40">// Architectural Pipeline</div>
+              <div><span className="text-[#EDEDED]">01. Client:</span> React/Vite + Tailwind Frontend</div>
+              <div><span className="text-[#EDEDED]">02. API:</span> Node.js / Express + Mongoose Schemas</div>
+              <div><span className="text-[#EDEDED]">03. Intelligence:</span> Provider-Abstracted LLM Interface</div>
             </div>
           </div>
         )
@@ -93,24 +89,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
       case 'assetflow':
         return (
           <div className="space-y-3 font-mono text-xs">
-            {/* RBAC & Status Transition Matrix */}
-            <div className="p-3.5 rounded-lg bg-black/40 border border-white/[0.06] flex items-center justify-between">
+            {/* Hackathon Status Header */}
+            <div className="p-3 rounded-lg bg-black/40 border border-white/[0.06] flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#F97316]" />
-                <span className="text-[#EDEDED] text-[11px]">ROLE-BASED ACCESS (RBAC)</span>
+                <Terminal className="w-3.5 h-3.5 text-[#F97316]" />
+                <span className="text-[#EDEDED] text-[11px]">HACKATHON BUILD (SOLO)</span>
               </div>
-              <span className="px-2 py-0.5 rounded bg-white/[0.05] text-[10px] text-[#A1A1AA] border border-white/[0.06]">
-                JWT VERIFIED
+              <span className="px-2 py-0.5 rounded bg-amber-500/10 text-[10px] text-amber-400 border border-amber-500/20">
+                PAUSED MID-BUILD
               </span>
             </div>
 
-            {/* Asset Lifecycle Progression */}
-            <div className="p-3.5 rounded-lg bg-black/40 border border-white/[0.06] space-y-2">
-              <div className="text-[10px] text-white/40 uppercase tracking-widest">// Lifecycle State Machine</div>
-              <div className="grid grid-cols-3 gap-2 text-center text-[10px]">
-                <div className="py-1 rounded bg-white/[0.03] border border-white/[0.04] text-white/60">01. INGEST</div>
-                <div className="py-1 rounded bg-white/[0.07] border border-white/[0.12] text-white font-bold">02. ALLOCATED</div>
-                <div className="py-1 rounded bg-white/[0.03] border border-white/[0.04] text-white/60">03. AUDITED</div>
+            {/* Technical Debugging Log */}
+            <div className="p-3.5 rounded-lg bg-black/50 border border-white/[0.06] space-y-2">
+              <div className="flex items-center gap-1.5 text-[10px] text-red-400">
+                <AlertCircle className="w-3 h-3 text-red-400" />
+                <span>BLOCKED ON MONGO ATLAS TLS HANDSHAKE</span>
+              </div>
+              <div className="p-2 rounded bg-black/60 border border-white/[0.04] text-[10px] text-[#A1A1AA] leading-relaxed">
+                <div><span className="text-white/40">$</span> MongoServerSelectionError: connection timeout</div>
+                <div className="text-white/40">↳ Scaffold &amp; auth modules built; debugging network TLS timeout.</div>
               </div>
             </div>
           </div>
@@ -119,26 +117,23 @@ export function ProjectCard({ project }: ProjectCardProps) {
       case 'campusloop':
         return (
           <div className="space-y-3 font-mono text-xs">
-            {/* Peer-to-Peer Reservation Status */}
-            <div className="p-3.5 rounded-lg bg-black/40 border border-white/[0.06]">
-              <div className="flex items-center justify-between text-[11px] mb-2">
-                <span className="flex items-center gap-2 text-[#EDEDED]">
-                  <Network className="w-3.5 h-3.5 text-[#F97316]" />
-                  CONFLICT-FREE SCHEDULER
-                </span>
-                <span className="text-emerald-400 font-bold text-[10px]">ACTIVE</span>
+            {/* Solo Restart Banner */}
+            <div className="p-3 rounded-lg bg-black/40 border border-white/[0.06] flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <RefreshCw className="w-3.5 h-3.5 text-[#F97316]" />
+                <span className="text-[#EDEDED] text-[11px]">SOLO REWRITE // FULL MERN STACK</span>
               </div>
-              <p className="text-[10px] text-[#A1A1AA] leading-tight">
-                Zero double-booking guarantee via transactional locks on shared campus lab equipment.
-              </p>
+              <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-[10px] text-emerald-400 border border-emerald-500/20">
+                DEPLOYED
+              </span>
             </div>
 
-            {/* University Verified Domain Gateway */}
-            <div className="p-3 rounded-lg bg-black/40 border border-white/[0.06] flex items-center justify-between text-[11px]">
-              <span className="text-[#A1A1AA]">DOMAIN GATEWAY:</span>
-              <span className="text-[#EDEDED] bg-white/[0.05] px-2 py-0.5 rounded text-[10px]">
-                @edu.campus.in
-              </span>
+            {/* Architectural Modules */}
+            <div className="p-3.5 rounded-lg bg-black/40 border border-white/[0.06] space-y-1.5 text-[11px] text-[#A1A1AA]">
+              <div className="text-white/40">// Scope &amp; Implementation</div>
+              <div><span className="text-[#EDEDED]">Real-Time:</span> Socket.io live availability broadcasts</div>
+              <div><span className="text-[#EDEDED]">Booking:</span> Date-range booking flow with status states</div>
+              <div><span className="text-[#EDEDED]">Payments:</span> Stripe test checkout + webhook fulfillment</div>
             </div>
           </div>
         )
@@ -146,24 +141,30 @@ export function ProjectCard({ project }: ProjectCardProps) {
       case 'job-market-analytics':
         return (
           <div className="space-y-3 font-mono text-xs">
-            {/* Query Optimization & Pipeline Metrics */}
-            <div className="p-3.5 rounded-lg bg-black/40 border border-white/[0.06]">
-              <div className="flex items-center justify-between text-[11px] mb-2">
-                <span className="flex items-center gap-2 text-[#EDEDED]">
-                  <BarChart3 className="w-3.5 h-3.5 text-[#F97316]" />
-                  SQL CTE &amp; WINDOW AGGREGATIONS
-                </span>
-                <span className="text-[#F97316] font-bold text-[10px]">-38% RUNTIME</span>
+            {/* Pipeline Stage Header */}
+            <div className="p-3 rounded-lg bg-black/40 border border-white/[0.06] flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <BarChart3 className="w-3.5 h-3.5 text-[#F97316]" />
+                <span className="text-[#EDEDED] text-[11px]">DATA PIPELINE STAGE</span>
               </div>
-              <div className="space-y-1 text-[10px] text-[#A1A1AA]">
-                <div className="flex justify-between">
-                  <span>POSTINGS PROCESSED:</span>
-                  <span className="text-white font-semibold">50,000+ Records</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>SALARY PERCENTILE BANDS:</span>
-                  <span className="text-white font-semibold">p25 / p50 / p90</span>
-                </div>
+              <span className="px-2 py-0.5 rounded bg-sky-500/10 text-[10px] text-sky-400 border border-sky-500/20">
+                IN PROGRESS
+              </span>
+            </div>
+
+            {/* Pipeline Roadmap */}
+            <div className="p-3.5 rounded-lg bg-black/40 border border-white/[0.06] space-y-1.5 text-[10px] text-[#A1A1AA]">
+              <div className="flex justify-between">
+                <span>01. DATA INGESTION:</span>
+                <span className="text-white">Kaggle + Hugging Face</span>
+              </div>
+              <div className="flex justify-between">
+                <span>02. DATABASE TARGET:</span>
+                <span className="text-white">PostgreSQL Schema</span>
+              </div>
+              <div className="flex justify-between">
+                <span>03. ANALYTICS MODEL:</span>
+                <span className="text-white">Power BI Star Schema</span>
               </div>
             </div>
           </div>
@@ -210,7 +211,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-white/20 group-hover:bg-[#F97316] transition-colors" />
             <span className="text-[#52525B] group-hover:text-[#A1A1AA] transition-colors uppercase tracking-wider text-[11px]">
-              {project.id.toUpperCase()} // SYS.ENGINE
+              {project.id.toUpperCase()}
             </span>
           </div>
 
@@ -240,9 +241,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Card Footer Status Indicator */}
         <div className="mt-5 pt-4 border-t border-white/[0.05] flex items-center justify-between text-[11px] font-mono text-[#52525B]">
-          <span>PERSPECTIVE: 3D SPRING</span>
+          <span className="truncate max-w-[200px] sm:max-w-none text-[#A1A1AA]">
+            {project.statusLabel}
+          </span>
           {isMobile && (
-            <span className="text-[#F97316] text-[10px]">
+            <span className="text-[#F97316] text-[10px] shrink-0 ml-2">
               {isTapped ? 'TAP TO TILT' : 'TAP TO LEVEL'}
             </span>
           )}

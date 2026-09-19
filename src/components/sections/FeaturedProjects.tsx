@@ -3,7 +3,22 @@ import { ArrowUpRight, ExternalLink, BookOpen } from 'lucide-react'
 import { PROJECTS } from '../../data/projects'
 import { ProjectCard } from '../ui/ProjectCard'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
+import type { ProjectBuildStatus } from '../../types'
 
+function getStatusBadgeStyle(status: ProjectBuildStatus) {
+  switch (status) {
+    case 'in-development':
+      return 'bg-amber-500/10 text-amber-300 border-amber-500/20'
+    case 'paused':
+      return 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+    case 'solo-restart':
+      return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+    case 'data-pipeline':
+      return 'bg-sky-500/10 text-sky-400 border-sky-500/20'
+    default:
+      return 'bg-white/[0.05] text-[#A1A1AA] border-white/[0.08]'
+  }
+}
 
 export function FeaturedProjects() {
   const prefersReducedMotion = useReducedMotion()
@@ -38,8 +53,8 @@ export function FeaturedProjects() {
         </div>
 
         <p className="font-['Space_Grotesk'] text-sm text-[#A1A1AA] max-w-sm leading-relaxed">
-          Four authentic software engineering builds highlighting full-stack resiliency, 
-          applied machine learning, and data intelligence.
+          Four authentic engineering builds reflecting real development lifecycles, 
+          active rewrites, and network-level debugging.
         </p>
       </div>
 
@@ -47,7 +62,6 @@ export function FeaturedProjects() {
       <div className="space-y-24 sm:space-y-32 md:space-y-40">
         {PROJECTS.map((project, index) => {
           const isEven = index % 2 === 0
-          const primaryMetric = project.metrics[0]
 
           return (
             <motion.article
@@ -67,14 +81,22 @@ export function FeaturedProjects() {
 
               {/* Narrative & Technical Specs Half (46% width on desktop) */}
               <div className="w-full lg:w-[46%] flex flex-col justify-center text-left">
-                {/* Numbered Project Index Label & Category */}
-                <div className="flex items-center gap-3 mb-3">
+                {/* Numbered Project Index Label, Category & Honest Build Status */}
+                <div className="flex flex-wrap items-center gap-2.5 mb-3">
                   <span className="font-mono text-xs text-[#F97316] font-semibold tracking-wider">
                     {project.index}
                   </span>
                   <span className="text-white/20 text-xs">|</span>
                   <span className="font-mono text-[11px] text-[#A1A1AA] uppercase tracking-wider">
                     {project.category.toUpperCase()}
+                  </span>
+                  <span className="text-white/20 text-xs">|</span>
+                  <span
+                    className={`font-mono text-[10px] px-2 py-0.5 rounded-full border uppercase tracking-tight ${getStatusBadgeStyle(
+                      project.buildStatus
+                    )}`}
+                  >
+                    {project.buildStatus.replace('-', ' ')}
                   </span>
                 </div>
 
@@ -88,28 +110,26 @@ export function FeaturedProjects() {
                   "{project.italicAccent}"
                 </p>
 
-                {/* Summary */}
+                {/* Honest Architectural Summary */}
                 <p className="font-['Space_Grotesk'] text-sm sm:text-base text-[#A1A1AA] leading-relaxed mb-6">
                   {project.summary}
                 </p>
 
-                {/* Key Technical Achievement / Metric Box */}
-                {primaryMetric && (
-                  <div className="mb-6 p-3.5 rounded-xl bg-[#121215] border border-white/[0.07] flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F97316] opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F97316]"></span>
-                      </span>
-                      <span className="font-mono text-xs text-[#A1A1AA] uppercase tracking-wider">
-                        {primaryMetric.label}
-                      </span>
-                    </div>
-                    <span className="font-mono text-xs font-bold text-[#EDEDED] bg-white/[0.04] px-2.5 py-0.5 rounded border border-white/[0.05]">
-                      {primaryMetric.value}
+                {/* Honest Technical Focus (Zero fabricated numbers) */}
+                <div className="mb-6 p-3.5 rounded-xl bg-[#121215] border border-white/[0.07] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F97316] opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F97316]"></span>
+                    </span>
+                    <span className="font-mono text-xs text-[#A1A1AA] uppercase tracking-wider">
+                      {project.technicalHighlight.label}
                     </span>
                   </div>
-                )}
+                  <span className="font-mono text-xs font-medium text-[#EDEDED] bg-white/[0.04] px-2.5 py-1 rounded border border-white/[0.05] text-left sm:text-right">
+                    {project.technicalHighlight.value}
+                  </span>
+                </div>
 
                 {/* Tech Stack Tags (JetBrains Mono) */}
                 <div className="flex flex-wrap gap-2 mb-8">
@@ -125,7 +145,7 @@ export function FeaturedProjects() {
 
                 {/* Action Links & Case Study Stub Trigger */}
                 <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-white/[0.06]">
-                  {/* Live Demo (Priority CTA with orange micro-accent border) */}
+                  {/* Live Demo (Shown only if project actually has a live deployment) */}
                   {project.liveDemoUrl && (
                     <a
                       href={project.liveDemoUrl}

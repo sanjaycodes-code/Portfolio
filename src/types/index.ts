@@ -1,6 +1,7 @@
 export type ProjectCategory = 'ai-ml' | 'systems' | 'fullstack'
+export type ProjectBuildStatus = 'in-development' | 'paused' | 'solo-restart' | 'data-pipeline'
 
-export interface ProjectMetric {
+export interface ProjectTechnicalHighlight {
   label: string
   value: string
 }
@@ -11,8 +12,10 @@ export interface Project {
   title: string
   italicAccent: string // Accent phrase rendered in Instrument Serif italic
   summary: string
+  buildStatus: ProjectBuildStatus
+  statusLabel: string
   architectureHighlights: string[]
-  metrics: ProjectMetric[]
+  technicalHighlight: ProjectTechnicalHighlight
   techStack: string[]
   category: ProjectCategory
   githubUrl?: string

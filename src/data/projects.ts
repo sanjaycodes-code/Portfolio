@@ -5,20 +5,21 @@ export const PROJECTS: Project[] = [
     id: 'ai-resume-analyzer',
     index: '01 // 04',
     title: 'AI Resume Analyzer',
-    italicAccent: 'semantic scoring & latent skill extraction',
+    italicAccent: 'provider-abstracted LLM parsing pipeline',
     summary:
-      'LLM-powered resume evaluation engine that parses resumes into structured schemas, performs embeddings-based semantic similarity scoring against job descriptions, and returns actionable skill-gap diagnostics.',
+      'Full-stack resume analysis application built end-to-end using Google Antigravity. Architected with a React/Vite and Tailwind frontend, Node/Express backend, and MongoDB/Mongoose. Implements a provider-abstracted LLM integration to structure raw resume text and execute contextual evaluations.',
+    buildStatus: 'in-development',
+    statusLabel: 'IN DEVELOPMENT // GOOGLE ANTIGRAVITY BUILD',
     architectureHighlights: [
-      'Multi-stage parsing pipeline extracting structured entity trees from unstructured PDFs',
-      'Vector cosine similarity scoring against target job description requirements',
-      'Automated ATS keyword gap analysis generating targeted refactoring recommendations'
+      'Engineered end-to-end utilizing Google Antigravity agentic workflows',
+      'Decoupled, provider-abstracted LLM interface layer for model flexibility',
+      'Structured entity parsing pipeline converting unstructured resumes into MongoDB schemas'
     ],
-    metrics: [
-      { label: 'ATS Match Precision', value: '92%' },
-      { label: 'Analysis Latency', value: '< 1.4s' },
-      { label: 'Schema Validity', value: '99.2%' }
-    ],
-    techStack: ['Python', 'FastAPI', 'LangChain / LLM', 'React', 'Tailwind CSS'],
+    technicalHighlight: {
+      label: 'Core Architecture',
+      value: 'Provider-Abstracted LLM Integration'
+    },
+    techStack: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'Google Antigravity'],
     category: 'ai-ml',
     githubUrl: 'https://github.com/sanjaycodes-code/AI-Resume-Analyzer',
     liveDemoUrl: 'https://ai-resume-analyzer-ashy-pi-13.vercel.app/',
@@ -27,21 +28,22 @@ export const PROJECTS: Project[] = [
   {
     id: 'assetflow',
     index: '02 // 04',
-    title: 'AssetFlow Enterprise Hub',
-    italicAccent: 'deterministic lifecycle tracking & audit trails',
+    title: 'AssetFlow',
+    italicAccent: 'MERN hackathon build paused on TLS timeout',
     summary:
-      'Full-stack asset management platform built solo during an intensive 36-hour hackathon. Features role-based access control (RBAC), end-to-end hardware tracking, and automated lifecycle audit trails.',
+      'Full-stack asset management system built solo during a hackathon. Implemented the core MERN scaffold, authentication, and initial asset tracking feature modules before running into a MongoDB Atlas TLS handshake and connection timeout issue mid-build. Currently paused as a deep-dive case study in network debugging.',
+    buildStatus: 'paused',
+    statusLabel: 'HACKATHON BUILD // PAUSED ON TLS ISSUE',
     architectureHighlights: [
-      'Engineered complete MERN stack architecture with optimized MongoDB indexing',
-      'Granular JWT authentication distinguishing Admin, Auditor, and Employee permission levels',
-      'Deterministic state transition machine managing asset depreciation, maintenance, and returns'
+      'Solo hackathon project built with React, Node/Express, and MongoDB Atlas',
+      'Implemented foundational authentication and core asset tracking modules',
+      'Diagnosed server-side MongoDB Atlas TLS connection timeouts in cloud environments'
     ],
-    metrics: [
-      { label: 'Hackathon Build', value: '36 hrs Solo' },
-      { label: 'Record Capacity', value: '10k+ Assets' },
-      { label: 'Access Control', value: 'JWT + RBAC' }
-    ],
-    techStack: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Tailwind CSS'],
+    technicalHighlight: {
+      label: 'Technical Blocker',
+      value: 'MongoDB Atlas TLS Handshake / Timeout'
+    },
+    techStack: ['React', 'Vite', 'Node.js', 'Express', 'MongoDB Atlas', 'Tailwind CSS'],
     category: 'fullstack',
     githubUrl: 'https://github.com/sanjaycodes-code',
     compositionTiltDeg: 2.2
@@ -49,21 +51,22 @@ export const PROJECTS: Project[] = [
   {
     id: 'campusloop',
     index: '03 // 04',
-    title: 'CampusLoop Sharing Network',
-    italicAccent: 'decentralized hardware sharing on campus',
+    title: 'CampusLoop',
+    italicAccent: 'solo rewrite: real-time sockets & Stripe booking',
     summary:
-      'Peer-to-peer campus device and lab equipment lending network built with a team during a collegiate hackathon. Enables verified university students to borrow, loan, and monitor expensive tech hardware securely.',
+      'Peer-to-peer campus device and gear rental platform. Originally built with a team during a hackathon (React, Firebase, Tailwind) where I implemented features, search, and modals. Restarted solo from scratch with a full-stack MERN stack, Socket.io for live availability broadcasts, race-condition-safe booking flows, and Stripe checkout with webhook fulfillment.',
+    buildStatus: 'solo-restart',
+    statusLabel: 'SOLO REWRITE // SHIPPED TO VERCEL & RENDER',
     architectureHighlights: [
-      'Institutional email domain verification gating access to a trusted peer network',
-      'Real-time reservation engine with automated conflict prevention for high-demand devices',
-      'Collaborative team development: led frontend architecture and REST API contracts'
+      'Solo rewrite migrating from Firebase to Node/Express + MongoDB Atlas + Mongoose',
+      'Socket.io implementation broadcasting live equipment availability across clients',
+      'Date-range reservation flow with status states, Stripe checkout, and webhook fulfillment'
     ],
-    metrics: [
-      { label: 'Collegiate Hackathon', value: '24 hrs Sprint' },
-      { label: 'Double-Booking Rate', value: '0.0%' },
-      { label: 'Pilot Cohort', value: '120+ Students' }
-    ],
-    techStack: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Tailwind CSS'],
+    technicalHighlight: {
+      label: 'Real-Time Architecture',
+      value: 'Socket.io + Stripe Webhook Flow'
+    },
+    techStack: ['React', 'Vite', 'Node.js', 'Express', 'MongoDB Atlas', 'Socket.io', 'Stripe', 'Tailwind CSS'],
     category: 'fullstack',
     githubUrl: 'https://github.com/sanjaycodes-code/Campus_Loop',
     liveDemoUrl: 'https://campus-loop-ten.vercel.app/',
@@ -73,20 +76,21 @@ export const PROJECTS: Project[] = [
     id: 'job-market-analytics',
     index: '04 // 04',
     title: 'Tech Job-Market Intelligence',
-    italicAccent: 'uncovering hiring signals across 50k+ postings',
+    italicAccent: 'Kaggle baseline to PostgreSQL & Power BI star schema',
     summary:
-      'Comprehensive data analytics and business intelligence project dissecting 50,000+ tech job postings to reveal emerging software/AI skill premiums, salary bands, and regional demand dynamics.',
+      'Data analytics project currently in the pipeline stage. Aggregating a baseline dataset from Kaggle and Hugging Face with supplemental API feeds. Building an end-to-end data pipeline targeting a PostgreSQL schema, an analytical SQL modeling layer, and a Power BI star schema for compensation and skill trend visualization.',
+    buildStatus: 'data-pipeline',
+    statusLabel: 'IN PROGRESS // DATA PIPELINE STAGE',
     architectureHighlights: [
-      'Multi-step Python ETL pipeline deduplicating and structuring messy semi-structured job feeds',
-      'Advanced SQL analytics utilizing CTEs, window functions, and multi-table aggregations',
-      'Interactive Power BI analytical dashboards with dynamic drill-downs by role and experience tier'
+      'Dataset ingestion from Kaggle and Hugging Face repositories with API supplements',
+      'Relational PostgreSQL schema design for normalized storage of job postings',
+      'Developing analytical SQL modeling layer and Power BI star schema'
     ],
-    metrics: [
-      { label: 'Postings Analyzed', value: '50,000+' },
-      { label: 'SQL Query Tuning', value: '-38% Run Time' },
-      { label: 'Interactive Views', value: '6 Dashboards' }
-    ],
-    techStack: ['SQL (PostgreSQL)', 'Python (Pandas)', 'Power BI', 'ETL Pipelines'],
+    technicalHighlight: {
+      label: 'Current Pipeline Stage',
+      value: 'Dataset Ingestion & PostgreSQL Modeling'
+    },
+    techStack: ['Python (Pandas)', 'PostgreSQL', 'Power BI', 'SQL', 'Kaggle / Hugging Face'],
     category: 'systems',
     githubUrl: 'https://github.com/sanjaycodes-code',
     compositionTiltDeg: 1.6
