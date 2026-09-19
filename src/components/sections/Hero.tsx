@@ -144,7 +144,7 @@ export function Hero() {
             </a>
             <span className="w-1 h-1 rounded-full bg-white/20" />
             <a
-              href="https://linkedin.com/in/sanjay"
+              href="https://www.linkedin.com/in/sanjay-kadivendi-271986303"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn Profile"
@@ -156,7 +156,7 @@ export function Hero() {
             </a>
             <span className="w-1 h-1 rounded-full bg-white/20" />
             <a
-              href="mailto:sanjay@example.com"
+              href="mailto:sanjaykadivendi13@gmail.com"
               aria-label="Email Sanjay"
               className="hover:text-white transition-colors p-2 rounded-full hover:bg-white/[0.04]"
             >
