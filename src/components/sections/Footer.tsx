@@ -182,16 +182,30 @@ export function Footer() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
+                  <a
+                    href={`https://mail.google.com/mail/?view=cm&to=${emailAddress}&su=${encodeURIComponent(
+                      selectedTemplate.subject
+                    )}&body=${encodeURIComponent(selectedTemplate.bodyText)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => copyToClipboard(emailAddress)}
+                    aria-label="Open pre-filled draft in Gmail web"
+                    className="font-mono text-xs px-3.5 py-1.5 rounded-lg border border-white/[0.18] bg-white/[0.08] hover:bg-white/[0.14] text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
+                  >
+                    <span>OPEN GMAIL</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-[#F97316]" />
+                  </a>
+
                   <button
                     onClick={handleCopyEmail}
                     type="button"
                     aria-label="Copy email address to clipboard"
-                    className="font-mono text-xs px-3.5 py-1.5 rounded-lg border border-white/[0.15] bg-white/[0.06] hover:bg-white/[0.12] text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
+                    className="font-mono text-xs px-3.5 py-1.5 rounded-lg border border-white/[0.1] bg-white/[0.03] hover:bg-white/[0.08] text-[#EDEDED] hover:text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
                   >
                     {emailCopied ? (
                       <>
                         <Check className="w-3.5 h-3.5 text-emerald-400" />
-                        <span className="text-emerald-400 font-semibold">COPIED EMAIL!</span>
+                        <span className="text-emerald-400 font-semibold">COPIED!</span>
                       </>
                     ) : (
                       <>
@@ -204,8 +218,8 @@ export function Footer() {
                   <button
                     onClick={handleLaunchMailApp}
                     type="button"
-                    aria-label="Launch default email client"
-                    className="font-mono text-xs px-3.5 py-1.5 rounded-lg border border-white/[0.1] bg-white/[0.03] hover:bg-white/[0.08] text-[#EDEDED] hover:text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all flex items-center gap-1.5 cursor-pointer"
+                    aria-label="Launch default system email client"
+                    className="font-mono text-xs px-3 py-1.5 rounded-lg border border-white/[0.06] bg-transparent hover:bg-white/[0.04] text-[#A1A1AA] hover:text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all hidden sm:flex items-center gap-1.5 cursor-pointer"
                   >
                     {mailAppLaunched ? (
                       <>
@@ -214,7 +228,7 @@ export function Footer() {
                       </>
                     ) : (
                       <>
-                        <span>LAUNCH MAIL APP</span>
+                        <span>SYSTEM APP</span>
                         <ExternalLink className="w-3 h-3 text-[#A1A1AA]" />
                       </>
                     )}
@@ -264,28 +278,43 @@ export function Footer() {
 
               {/* Live Draft Preview Box */}
               <div className="p-4 rounded-xl bg-[#080809] border border-white/[0.06] space-y-2">
-                <div className="flex items-center justify-between gap-2 border-b border-white/[0.05] pb-2">
+                <div className="flex items-center justify-between gap-2 border-b border-white/[0.05] pb-2 flex-wrap">
                   <span className="font-mono text-[11px] text-[#A1A1AA]">
                     <span className="text-white/40">Subject:</span> {selectedTemplate.subject}
                   </span>
 
-                  <button
-                    type="button"
-                    onClick={handleCopyDraft}
-                    className="font-mono text-[11px] px-2.5 py-1 rounded border border-white/[0.1] bg-white/[0.04] text-[#EDEDED] hover:text-white hover:bg-white/[0.08] flex items-center gap-1.5 transition-all cursor-pointer shrink-0"
-                  >
-                    {draftCopied ? (
-                      <>
-                        <Check className="w-3 h-3 text-emerald-400" />
-                        <span className="text-emerald-400 font-medium">COPIED DRAFT!</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3 h-3 text-[#A1A1AA]" />
-                        <span>COPY DRAFT</span>
-                      </>
-                    )}
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <a
+                      href={`https://mail.google.com/mail/?view=cm&to=${emailAddress}&su=${encodeURIComponent(
+                        selectedTemplate.subject
+                      )}&body=${encodeURIComponent(selectedTemplate.bodyText)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => copyToClipboard(emailAddress)}
+                      className="font-mono text-[11px] px-2.5 py-1 rounded border border-white/[0.15] bg-white/[0.06] text-white hover:bg-white/[0.12] flex items-center gap-1 transition-all cursor-pointer shrink-0"
+                    >
+                      <span>OPEN IN GMAIL</span>
+                      <ExternalLink className="w-3 h-3 text-[#F97316]" />
+                    </a>
+
+                    <button
+                      type="button"
+                      onClick={handleCopyDraft}
+                      className="font-mono text-[11px] px-2.5 py-1 rounded border border-white/[0.1] bg-white/[0.04] text-[#EDEDED] hover:text-white hover:bg-white/[0.08] flex items-center gap-1.5 transition-all cursor-pointer shrink-0"
+                    >
+                      {draftCopied ? (
+                        <>
+                          <Check className="w-3 h-3 text-emerald-400" />
+                          <span className="text-emerald-400 font-medium">COPIED DRAFT!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-3.5 h-3.5 text-[#A1A1AA]" />
+                          <span>COPY DRAFT</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
 
                 <p className="font-mono text-xs text-[#A1A1AA] whitespace-pre-line leading-relaxed">
