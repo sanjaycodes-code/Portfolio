@@ -223,6 +223,7 @@ export function Footer() {
                     href={CALENDLY_URL}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     aria-label="Schedule a call via Calendly (opens in a new tab)"
                     className="font-mono text-xs px-3.5 py-1.5 rounded-lg border border-white/[0.1] bg-white/[0.03] hover:bg-white/[0.08] text-[#EDEDED] hover:text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
                   >
@@ -428,6 +429,7 @@ export function Footer() {
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 aria-label="Schedule a call via Calendly (opens in a new tab)"
                 className="flex items-center justify-between p-3.5 rounded-xl bg-[#080809] border border-white/[0.06] hover:border-white/[0.18] hover:bg-white/[0.02] text-[#EDEDED] hover:text-white transition-all group focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none"
               >
