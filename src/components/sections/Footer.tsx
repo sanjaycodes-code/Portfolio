@@ -7,10 +7,14 @@ import {
   ExternalLink,
   ChevronUp,
   Sparkles,
-  MessageSquare
+  MessageSquare,
+  Calendar
 } from 'lucide-react'
 import { SOCIAL_LINKS } from '../../data/socials'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
+
+// Calendly booking link (Replace with your direct Calendly URL once configured)
+const CALENDLY_URL = 'https://calendly.com/sanjaykadivendi'
 
 interface InquiryTemplate {
   id: string
@@ -215,6 +219,18 @@ export function Footer() {
                     )}
                   </button>
 
+                  <a
+                    href={CALENDLY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Schedule a call via Calendly (opens in a new tab)"
+                    className="font-mono text-xs px-3.5 py-1.5 rounded-lg border border-white/[0.1] bg-white/[0.03] hover:bg-white/[0.08] text-[#EDEDED] hover:text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all flex items-center gap-1.5 shadow-sm cursor-pointer"
+                  >
+                    <Calendar className="w-3.5 h-3.5 text-[#A1A1AA]" />
+                    <span>SCHEDULE CALL</span>
+                    <ExternalLink className="w-3 h-3 text-[#A1A1AA] opacity-70" />
+                  </a>
+
                   <button
                     onClick={handleLaunchMailApp}
                     type="button"
@@ -323,7 +339,16 @@ export function Footer() {
               </div>
 
               <p className="font-mono text-[11px] text-[#A1A1AA] mt-3">
-                ✦ Zero blank pages. Click &ldquo;Copy Draft&rdquo; to paste directly into your favorite email app (Gmail, Outlook, Apple Mail), or launch your system mail client.
+                ✦ Zero blank pages. Click &ldquo;Copy Draft&rdquo; to paste directly into your email app, launch your system mail client, or{' '}
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#F97316] underline underline-offset-2 transition-colors inline-flex items-center gap-0.5"
+                >
+                  <span>schedule a call directly</span>
+                  <ExternalLink className="w-2.5 h-2.5 inline" />
+                </a>.
               </p>
             </div>
           </div>
@@ -397,6 +422,33 @@ export function Footer() {
                   </a>
                 )
               })}
+
+              {/* Schedule a Call (Calendly Direct Booking) */}
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Schedule a call via Calendly (opens in a new tab)"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-[#080809] border border-white/[0.06] hover:border-white/[0.18] hover:bg-white/[0.02] text-[#EDEDED] hover:text-white transition-all group focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none"
+              >
+                <div className="flex items-center gap-3">
+                  <Calendar className="w-4 h-4 text-[#A1A1AA] group-hover:text-[#F97316] transition-colors" />
+                  <div>
+                    <span className="font-['Syne'] text-sm font-semibold block">
+                      Schedule a Call
+                    </span>
+                    <span className="font-mono text-[11px] text-[#A1A1AA]">
+                      calendly.com/sanjaykadivendi
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 font-mono text-xs text-[#A1A1AA] group-hover:text-white">
+                  <span className="text-[10px] uppercase px-2 py-0.5 rounded bg-white/[0.04] text-[#A1A1AA] border border-white/[0.05] hidden sm:inline-block">
+                    Direct Booking
+                  </span>
+                  <ArrowUpRight className="w-4 h-4 text-[#A1A1AA] group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                </div>
+              </a>
             </div>
 
             {/* Quick Context Card */}
