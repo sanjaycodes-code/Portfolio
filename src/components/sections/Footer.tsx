@@ -141,7 +141,7 @@ export function Footer() {
         </div>
 
         <p className="font-['Space_Grotesk'] text-sm text-[#A1A1AA] max-w-md leading-relaxed">
-          Open to software engineering and applied AI internship roles for Summer / Fall 2025.
+          Open to software engineering and applied AI internship roles for Summer / Fall 2026.
           Prepared to take end-to-end ownership from architecture to production deployment.
         </p>
       </div>
@@ -159,7 +159,7 @@ export function Footer() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F97316]"></span>
                 </span>
                 <span className="font-mono text-xs text-[#EDEDED] font-medium tracking-tight">
-                  OPEN FOR INTERNSHIPS // 2025
+                  OPEN FOR INTERNSHIPS // 2026
                 </span>
               </div>
 
@@ -419,7 +419,7 @@ export function Footer() {
       <div className="pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex flex-wrap items-center gap-3 text-center sm:text-left">
           <span className="font-mono text-xs text-[#EDEDED] font-semibold">
-            © 2025 SANJAY
+            © {new Date().getFullYear()} SANJAY
           </span>
           <span className="text-white/20 text-xs hidden sm:inline">|</span>
           <span className="font-mono text-xs text-[#A1A1AA]">

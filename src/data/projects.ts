@@ -45,7 +45,6 @@ export const PROJECTS: Project[] = [
     },
     techStack: ['React', 'Vite', 'Node.js', 'Express', 'MongoDB Atlas', 'Tailwind CSS'],
     category: 'fullstack',
-    githubUrl: 'https://github.com/sanjaycodes-code',
     compositionTiltDeg: 2.2
   },
   {
@@ -92,7 +91,6 @@ export const PROJECTS: Project[] = [
     },
     techStack: ['Python (Pandas)', 'PostgreSQL', 'Power BI', 'SQL', 'Kaggle / Hugging Face'],
     category: 'systems',
-    githubUrl: 'https://github.com/sanjaycodes-code',
     compositionTiltDeg: 1.6
   }
 ]
