@@ -13,8 +13,8 @@ import {
 import { SOCIAL_LINKS } from '../../data/socials'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 
-// Calendly booking link (Replace with your direct Calendly URL once configured)
-const CALENDLY_URL = 'https://calendly.com/sanjaykadivendi'
+// Calendly direct booking link
+const CALENDLY_URL = 'https://calendly.com/sanjaykadivendi13/15-min-intro-engineering-chat'
 
 interface InquiryTemplate {
   id: string
@@ -438,7 +438,7 @@ export function Footer() {
                       Schedule a Call
                     </span>
                     <span className="font-mono text-[11px] text-[#A1A1AA]">
-                      calendly.com/sanjaykadivendi
+                      calendly.com/sanjaykadivendi13
                     </span>
                   </div>
                 </div>
