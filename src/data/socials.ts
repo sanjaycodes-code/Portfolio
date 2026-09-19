@@ -21,8 +21,8 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     label: 'X (Twitter)',
-    url: 'https://x.com/sanjay',
-    username: '@sanjay_dev',
+    url: 'https://x.com/KadivendiSanjay',
+    username: '@KadivendiSanjay',
     type: 'x'
   }
 ]

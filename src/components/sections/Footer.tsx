@@ -137,7 +137,7 @@ export function Footer() {
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <button
                     onClick={handleCopyEmail}
                     type="button"
@@ -152,17 +152,28 @@ export function Footer() {
                     ) : (
                       <>
                         <Copy className="w-3.5 h-3.5 text-[#A1A1AA]" />
-                        <span>COPY</span>
+                        <span>COPY EMAIL</span>
                       </>
                     )}
                   </button>
 
                   <a
-                    href={mailtoHref}
-                    className="font-mono text-xs px-3.5 py-1.5 rounded-lg border border-white/[0.15] bg-white/[0.06] hover:bg-white/[0.12] text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all flex items-center gap-1.5 shadow-sm"
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}&su=${encodeURIComponent(
+                      selectedTemplate.subject
+                    )}&body=${selectedTemplate.body}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-xs px-3 py-1.5 rounded-lg border border-white/[0.15] bg-white/[0.06] hover:bg-white/[0.12] text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all flex items-center gap-1.5 shadow-sm"
                   >
-                    <span>COMPOSE</span>
+                    <span>OPEN GMAIL</span>
                     <ExternalLink className="w-3 h-3 text-[#A1A1AA]" />
+                  </a>
+
+                  <a
+                    href={mailtoHref}
+                    className="font-mono text-xs px-3 py-1.5 rounded-lg border border-white/[0.08] bg-transparent hover:bg-white/[0.04] text-[#A1A1AA] hover:text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all hidden sm:flex items-center gap-1.5"
+                  >
+                    <span>DEFAULT APP</span>
                   </a>
                 </div>
               </div>
@@ -173,7 +184,7 @@ export function Footer() {
               <div className="flex items-center gap-1.5 mb-2.5">
                 <MessageSquare className="w-3.5 h-3.5 text-[#A1A1AA]" />
                 <span className="font-mono text-xs text-[#A1A1AA] uppercase tracking-wider">
-                  MAILTO INTENT PRESETS (OPENS DEFAULT EMAIL CLIENT)
+                  MAILTO INTENT PRESETS (OPENS PRE-FORMATTED DRAFT)
                 </span>
               </div>
 
@@ -195,7 +206,7 @@ export function Footer() {
               </div>
 
               <p className="font-mono text-[11px] text-[#A1A1AA] mt-3">
-                ✦ No silent backend forms. Pre-formats your inquiry directly into your native email client.
+                ✦ No silent backend forms. Pre-formats your inquiry directly into Gmail or your native email client.
               </p>
             </div>
           </div>
@@ -210,30 +221,65 @@ export function Footer() {
 
             {/* Links List */}
             <div className="space-y-3">
-              {SOCIAL_LINKS.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3.5 rounded-xl bg-[#080809] border border-white/[0.06] hover:border-white/[0.18] hover:bg-white/[0.02] text-[#EDEDED] hover:text-white transition-all group focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs text-[#A1A1AA] group-hover:text-[#F97316] transition-colors">
-                      ✦
-                    </span>
-                    <div>
-                      <span className="font-['Syne'] text-sm font-semibold block">
-                        {link.label}
+              {SOCIAL_LINKS.map((link) => {
+                if (link.type === 'email') {
+                  return (
+                    <button
+                      key={link.label}
+                      type="button"
+                      onClick={handleCopyEmail}
+                      aria-label="Copy email to clipboard"
+                      className="w-full flex items-center justify-between p-3.5 rounded-xl bg-[#080809] border border-white/[0.06] hover:border-white/[0.18] hover:bg-white/[0.02] text-[#EDEDED] hover:text-white transition-all group focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none text-left cursor-pointer"
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="font-mono text-xs text-[#A1A1AA] group-hover:text-[#F97316] transition-colors">
+                          ✦
+                        </span>
+                        <div>
+                          <span className="font-['Syne'] text-sm font-semibold block">
+                            {link.label}
+                          </span>
+                          <span className="font-mono text-[11px] text-[#A1A1AA]">
+                            {copied ? 'COPIED TO CLIPBOARD' : link.username}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-1.5 font-mono text-xs text-[#A1A1AA] group-hover:text-white">
+                        {copied ? (
+                          <Check className="w-4 h-4 text-emerald-400" />
+                        ) : (
+                          <Copy className="w-4 h-4 text-[#A1A1AA] group-hover:text-white transition-all" />
+                        )}
+                      </div>
+                    </button>
+                  )
+                }
+
+                return (
+                  <a
+                    key={link.label}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3.5 rounded-xl bg-[#080809] border border-white/[0.06] hover:border-white/[0.18] hover:bg-white/[0.02] text-[#EDEDED] hover:text-white transition-all group focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="font-mono text-xs text-[#A1A1AA] group-hover:text-[#F97316] transition-colors">
+                        ✦
                       </span>
-                      <span className="font-mono text-[11px] text-[#A1A1AA]">
-                        {link.username}
-                      </span>
+                      <div>
+                        <span className="font-['Syne'] text-sm font-semibold block">
+                          {link.label}
+                        </span>
+                        <span className="font-mono text-[11px] text-[#A1A1AA]">
+                          {link.username}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  <ArrowUpRight className="w-4 h-4 text-[#A1A1AA] group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                </a>
-              ))}
+                    <ArrowUpRight className="w-4 h-4 text-[#A1A1AA] group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                  </a>
+                )
+              })}
             </div>
 
             {/* Quick Context Card */}
