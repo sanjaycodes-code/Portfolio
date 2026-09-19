@@ -25,23 +25,27 @@ export interface Project {
 
 export interface SkillItem {
   name: string
-  isPrimary?: boolean
+  isCore?: boolean
 }
 
 export interface SkillCategory {
   id: string
+  index: string // e.g. '// 02.1'
   categoryName: string
   iconName: string
+  projectContext: string
   description: string
   skills: SkillItem[]
 }
 
 export interface ExperienceItem {
   id: string
+  index: string // e.g. '// 03.1'
   period: string
-  role: string
+  title: string
   organization: string
-  badge?: string
+  badge: string
+  statusType: 'active' | 'solo-restart' | 'paused' | 'academic'
   description: string[]
   tags: string[]
 }

@@ -2,42 +2,62 @@ import type { ExperienceItem } from '../types'
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
-    id: 'btech-cs',
-    period: '2022 — Present',
-    role: 'B.Tech in Computer Science & Engineering',
-    organization: 'Undergraduate Program',
-    badge: 'Senior Undergraduate',
+    id: 'self-directed-track',
+    index: '// 03.1',
+    period: '2023 — Present',
+    title: 'Self-Directed Software & AI Track',
+    organization: 'Independent Engineering Curriculum',
+    badge: 'ACTIVE PARALLEL TRACK',
+    statusType: 'active',
     description: [
-      'Comprehensive coursework in Data Structures, Algorithms, DBMS, Operating Systems, Computer Networks, and Machine Learning.',
-      'Active builder developing end-to-end full-stack systems, data engineering pipelines, and LLM-assisted applications.',
-      'Active participant in collegiate coding competitions and open-source software explorations.'
+      'Pursuing an intensive parallel curriculum focused on full-stack web architecture, real-time WebSocket systems, and LLM application development.',
+      'Building production-deployed applications (CampusLoop, AI Resume Analyzer) to translate engineering theory into resilient systems.',
+      'Actively exploring agentic engineering workflows using Google Antigravity for structured full-stack delivery.'
     ],
-    tags: ['Data Structures & Algorithms', 'DBMS & SQL', 'Operating Systems', 'System Design Basics']
+    tags: ['Full-Stack Systems', 'Socket.io', 'LLM Orchestration', 'PostgreSQL', 'Google Antigravity']
   },
   {
-    id: 'assetflow-hackathon',
-    period: '2024',
-    role: 'Solo Hackathon Builder // AssetFlow',
-    organization: '36-Hour Hackathon',
-    badge: 'Solo Project',
+    id: 'campusloop-journey',
+    index: '// 03.2',
+    period: 'Hackathon → Solo Restart',
+    title: 'CampusLoop: Team Hackathon to Solo Rebuild',
+    organization: 'Collegiate Hackathon & Solo Project',
+    badge: 'SOLO REWRITE // DEPLOYED',
+    statusType: 'solo-restart',
     description: [
-      'Engineered AssetFlow entirely solo in 36 hours — a full-stack MERN enterprise asset tracking platform with JWT-based role management (RBAC).',
-      'Implemented real-time asset lifecycle state transitions and dynamic audit logging for hardware check-ins/checkouts.',
-      'Designed a responsive, high-contrast dashboard with Tailwind CSS and rapid state management.'
+      'Originally built with a team during a collegiate hackathon (React, Firebase, Tailwind) where I developed the UI features, search, filters, and modal flows; left roughly halfway complete at the end of the sprint.',
+      'Restarted solo from scratch with a complete MERN rewrite to master the full backend lifecycle: Node/Express, MongoDB Atlas, and Mongoose.',
+      'Engineered live inventory status broadcasting with Socket.io and integrated a date-range booking flow backed by Stripe test checkout and webhooks.'
     ],
-    tags: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Role-Based Access Control']
+    tags: ['Solo Rebuild', 'Node/Express', 'MongoDB Atlas', 'Socket.io', 'Stripe Webhooks']
   },
   {
-    id: 'campusloop-hackathon',
-    period: '2023 — 2024',
-    role: 'Frontend Lead & Core Contributor // CampusLoop',
-    organization: 'Collegiate Team Hackathon',
-    badge: 'Team Hackathon',
+    id: 'assetflow-journey',
+    index: '// 03.3',
+    period: 'Hackathon Sprint',
+    title: 'AssetFlow: Solo Hackathon Build',
+    organization: 'Hackathon Build',
+    badge: 'PAUSED // TLS DEBUGGING',
+    statusType: 'paused',
     description: [
-      'Led UI architecture and API integration for CampusLoop, a peer-to-peer campus hardware and device lending platform.',
-      'Engineered conflict-free booking mechanisms to eliminate double-reservations for shared campus tech equipment.',
-      'Spearheaded sprint planning and Git branch management within a 4-person engineering team.'
+      'Designed and coded solo during a hackathon, successfully scaffolding the project and implementing authentication and core asset tracking modules.',
+      'Blocked mid-build by a server-side MongoDB Atlas TLS handshake connection timeout, leaving the build roughly halfway complete.',
+      'Maintained transparent documentation of the networking bottleneck as an active case study in connection debugging.'
     ],
-    tags: ['React', 'TypeScript', 'API Integration', 'Team Collaboration', 'Git Workflow']
+    tags: ['Solo Hackathon', 'MERN Stack', 'JWT Auth', 'MongoDB Atlas', 'Network Debugging']
+  },
+  {
+    id: 'nit-durgapur',
+    index: '// 03.4',
+    period: '2023 — Present',
+    title: 'B.Tech in Civil Engineering (Entering Third Year)',
+    organization: 'National Institute of Technology (NIT), Durgapur',
+    badge: 'UNDERGRADUATE',
+    statusType: 'academic',
+    description: [
+      'Undergraduate student at an Institute of National Importance, entering third year.',
+      'Pairing core engineering analytical rigor with an independent dedication to software architecture, data modeling, and modern developer tooling.'
+    ],
+    tags: ['NIT Durgapur', 'Engineering Fundamentals', 'Analytical Modeling']
   }
 ]

@@ -1,7 +1,9 @@
 import { Navbar } from './components/layout/Navbar'
 import { Hero } from './components/sections/Hero'
 import { FeaturedProjects } from './components/sections/FeaturedProjects'
-import { Terminal, Layers } from 'lucide-react'
+import { TechMatrix } from './components/sections/TechMatrix'
+import { ExperienceJourney } from './components/sections/ExperienceJourney'
+import { Terminal } from 'lucide-react'
 
 export default function App() {
   return (
@@ -17,21 +19,11 @@ export default function App() {
         {/* Phase 3 Featured Projects: Agency Case-Study Layout with 3D Tilt Cards */}
         <FeaturedProjects />
 
+        {/* Phase 4 Technical Skill Matrix (Verified Real Stacks) */}
+        <TechMatrix />
 
-        {/* Phase 4 Target Anchors */}
-        <section id="stack" className="py-16 max-w-6xl mx-auto px-4 sm:px-6 md:px-8 w-full border-t border-white/[0.05]">
-          <div className="flex items-center gap-2 font-mono text-xs text-[#52525B] tracking-widest uppercase mb-4">
-            <Layers className="w-4 h-4 text-[#F97316]" />
-            <span>// 02 TECHNICAL MATRIX (COMING IN PHASE 4)</span>
-          </div>
-        </section>
-
-        <section id="journey" className="py-16 max-w-6xl mx-auto px-4 sm:px-6 md:px-8 w-full border-t border-white/[0.05]">
-          <div className="flex items-center gap-2 font-mono text-xs text-[#52525B] tracking-widest uppercase mb-4">
-            <Terminal className="w-4 h-4 text-[#F97316]" />
-            <span>// 03 EXPERIENCE &amp; ACADEMIC JOURNEY (COMING IN PHASE 4)</span>
-          </div>
-        </section>
+        {/* Phase 4 Experience & Academic Journey (Honest Timeline) */}
+        <ExperienceJourney />
 
         {/* Phase 5 Target Anchor */}
         <section id="terminal" className="py-16 max-w-6xl mx-auto px-4 sm:px-6 md:px-8 w-full border-t border-white/[0.05]">

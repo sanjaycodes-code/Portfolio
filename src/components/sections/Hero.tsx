@@ -62,11 +62,11 @@ export function Hero() {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121215] border border-white/[0.08] text-xs font-mono text-[#A1A1AA] hover:border-white/[0.18] transition-colors shadow-lg">
               <Terminal className="w-3.5 h-3.5 text-[#F97316]" />
               <span className="text-[#EDEDED] font-medium tracking-wide">
-                SANJAY // BTECH CSE
+                SANJAY // NIT DURGAPUR
               </span>
               <span className="text-white/20">|</span>
               <span className="text-[11px] text-[#A1A1AA] tracking-tight">
-                SOFTWARE &amp; AI INTERN
+                SELF-DIRECTED SWE &amp; AI
               </span>
             </div>
           </motion.div>
@@ -92,14 +92,14 @@ export function Hero() {
             variants={itemVariants}
             className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-[#A1A1AA] max-w-2xl mx-auto font-['Space_Grotesk'] leading-relaxed font-normal"
           >
-            I’m a Computer Science undergraduate bridging robust full-stack
-            systems with applied machine learning. Creator of{' '}
+            I’m an undergraduate at NIT Durgapur pursuing an intensive self-directed
+            track in full-stack web engineering and applied AI. Creator of{' '}
             <span className="text-[#EDEDED] font-medium underline decoration-white/20 underline-offset-4">
-              AssetFlow
+              CampusLoop
             </span>
             ,{' '}
             <span className="text-[#EDEDED] font-medium underline decoration-white/20 underline-offset-4">
-              CampusLoop
+              AssetFlow
             </span>
             , and specialized LLM diagnostic tools.
           </motion.p>

@@ -2,47 +2,73 @@ import type { SkillCategory } from '../types'
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    id: 'ai-data',
-    categoryName: 'AI & Data Engineering',
-    iconName: 'BrainCircuit',
-    description: 'LLM orchestration, vector embeddings, data pipelines, and analytical intelligence.',
+    id: 'ai-ml',
+    index: '// 02.1',
+    categoryName: 'AI & Machine Learning',
+    iconName: 'Bot',
+    projectContext: 'Applied in AI Resume Analyzer & Job-Market Analytics',
+    description:
+      'Orchestrating provider-abstracted LLM workflows, document parsing pipelines, and baseline dataset ingestion.',
     skills: [
-      { name: 'Python', isPrimary: true },
-      { name: 'LangChain & LLM APIs', isPrimary: true },
-      { name: 'Vector Search & Embeddings', isPrimary: true },
-      { name: 'SQL (PostgreSQL / MySQL)', isPrimary: true },
-      { name: 'Pandas & NumPy', isPrimary: true },
-      { name: 'Power BI / Data Viz', isPrimary: true },
-      { name: 'FastAPI', isPrimary: false }
+      { name: 'Python', isCore: true },
+      { name: 'LangChain & LLM APIs', isCore: true },
+      { name: 'Google Antigravity', isCore: true },
+      { name: 'Embeddings & Semantic Search', isCore: true },
+      { name: 'Pandas (Data Wrangling)', isCore: false },
+      { name: 'Kaggle / Hugging Face Feeds', isCore: false }
     ]
   },
   {
-    id: 'fullstack-systems',
-    categoryName: 'Full Stack & Backend Systems',
+    id: 'systems-backend',
+    index: '// 02.2',
+    categoryName: 'Systems & Backend',
     iconName: 'Server',
-    description: 'Scalable web architecture, state management, REST APIs, and database modeling.',
+    projectContext: 'Applied in CampusLoop, AssetFlow & Job-Market DB',
+    description:
+      'Constructing RESTful endpoints, real-time WebSocket state distribution, database modeling, and webhook lifecycles.',
     skills: [
-      { name: 'React (Hooks, Modern Patterns)', isPrimary: true },
-      { name: 'TypeScript / JavaScript', isPrimary: true },
-      { name: 'Node.js & Express', isPrimary: true },
-      { name: 'MongoDB (Mongoose)', isPrimary: true },
-      { name: 'Tailwind CSS', isPrimary: true },
-      { name: 'REST API Design & RBAC', isPrimary: true },
-      { name: 'Framer Motion', isPrimary: false }
+      { name: 'Node.js', isCore: true },
+      { name: 'Express.js', isCore: true },
+      { name: 'MongoDB Atlas & Mongoose', isCore: true },
+      { name: 'PostgreSQL & SQL', isCore: true },
+      { name: 'Socket.io (WebSockets)', isCore: true },
+      { name: 'Stripe API & Webhooks', isCore: false },
+      { name: 'REST API Design', isCore: false }
     ]
   },
   {
-    id: 'cs-foundations',
-    categoryName: 'Core CS & Engineering Rigor',
-    iconName: 'Code2',
-    description: 'Undergraduate computer science foundations and software engineering discipline.',
+    id: 'frontend-architecture',
+    index: '// 02.3',
+    categoryName: 'Frontend Architecture',
+    iconName: 'Layout',
+    projectContext: 'Applied in CampusLoop, AssetFlow & AI Resume UI',
+    description:
+      'Designing reactive user interfaces, component state architectures, type-safe props, and fluid spring physics.',
     skills: [
-      { name: 'Data Structures & Algorithms', isPrimary: true },
-      { name: 'Object-Oriented Programming (OOP)', isPrimary: true },
-      { name: 'Database Management Systems (DBMS)', isPrimary: true },
-      { name: 'Git & Version Control', isPrimary: true },
-      { name: 'Operating Systems & Linux', isPrimary: false },
-      { name: 'C / C++ (Academic)', isPrimary: false }
+      { name: 'React', isCore: true },
+      { name: 'Vite', isCore: true },
+      { name: 'TypeScript', isCore: true },
+      { name: 'JavaScript (ES6+)', isCore: true },
+      { name: 'Tailwind CSS', isCore: true },
+      { name: 'Framer Motion', isCore: false },
+      { name: 'Responsive UI Design', isCore: false }
+    ]
+  },
+  {
+    id: 'tools-environments',
+    index: '// 02.4',
+    categoryName: 'Tools & Environments',
+    iconName: 'Terminal',
+    projectContext: 'Daily dev workflows across all four repositories',
+    description:
+      'Version control discipline, serverless & containerized deployments, API contract verification, and data modeling.',
+    skills: [
+      { name: 'Git & GitHub', isCore: true },
+      { name: 'Vercel Deployment', isCore: true },
+      { name: 'Render Hosting', isCore: true },
+      { name: 'Postman (API Testing)', isCore: false },
+      { name: 'Linux / Bash CLI', isCore: false },
+      { name: 'Power BI (Star Schema)', isCore: false }
     ]
   }
 ]
