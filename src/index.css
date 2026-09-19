@@ -20,7 +20,7 @@
 
   --color-text-primary: #ededed;
   --color-text-secondary: #a1a1aa;
-  --color-text-muted: #52525b;
+  --color-text-muted: #8e8e98;
 
   --color-accent-orange: #f97316;
   --color-accent-orange-muted: rgba(249, 115, 22, 0.2);
@@ -36,6 +36,24 @@ body {
   color: #ededed;
   font-family: var(--font-sans);
   overflow-x: hidden;
+}
+
+/* Accessible focus rings across all interactive elements */
+:focus-visible {
+  outline: 2px solid rgba(249, 115, 22, 0.75);
+  outline-offset: 2px;
+}
+
+/* Global prefers-reduced-motion hardening */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Editorial Serif Italic utility */

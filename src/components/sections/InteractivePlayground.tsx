@@ -146,7 +146,7 @@ export function InteractivePlayground() {
       {/* Section Editorial Header */}
       <div className="mb-12 sm:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/[0.08]">
         <div>
-          <span className="font-mono text-xs text-[#52525B] tracking-widest uppercase block mb-2">
+          <span className="font-mono text-xs text-[#8E8E98] tracking-widest uppercase block mb-2">
             // 04 INTERACTIVE LABORATORY
           </span>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Syne'] text-[#EDEDED] tracking-tight leading-[1.05]">
@@ -175,7 +175,7 @@ export function InteractivePlayground() {
               <span className="w-2.5 h-2.5 rounded-full bg-amber-500/40 border border-amber-500/60" />
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/40 border border-emerald-500/60" />
             </div>
-            <span className="font-mono text-xs text-[#52525B] hidden sm:inline">
+            <span className="font-mono text-xs text-[#8E8E98] hidden sm:inline">
               sanjaycodes@nit-dgp: ~/telemetry-lab
             </span>
           </div>
@@ -231,7 +231,7 @@ export function InteractivePlayground() {
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 mb-6 border-b border-white/[0.06]">
                 {/* Presets */}
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="font-mono text-xs text-[#52525B] mr-1 uppercase">
+                  <span className="font-mono text-xs text-[#8E8E98] mr-1 uppercase">
                     INPUT PRESET:
                   </span>
                   {RESUME_PRESETS.map((preset) => (
@@ -251,8 +251,12 @@ export function InteractivePlayground() {
 
                 {/* Target Role Selector */}
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs text-[#52525B] uppercase">TARGET ROLE:</span>
+                  <label htmlFor="target-role-select" className="font-mono text-xs text-[#8E8E98] uppercase cursor-pointer">
+                    TARGET ROLE:
+                  </label>
                   <select
+                    id="target-role-select"
+                    aria-label="Target Career Role Filter"
                     value={selectedRole.id}
                     onChange={(e) => {
                       const found = ROLE_PRESETS.find((r) => r.id === e.target.value)
@@ -273,7 +277,7 @@ export function InteractivePlayground() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                 {/* Left Column: Interactive Text Sandbox */}
                 <div className="lg:col-span-7 flex flex-col gap-2">
-                  <div className="flex items-center justify-between text-xs font-mono text-[#52525B]">
+                  <div className="flex items-center justify-between text-xs font-mono text-[#8E8E98]">
                     <span>DOCUMENT PAYLOAD (EDITABLE)</span>
                     <span>
                       {analysis.wordCount} words | {inputText.length} chars
@@ -293,7 +297,7 @@ export function InteractivePlayground() {
                     spellCheck={false}
                   />
 
-                  <p className="font-mono text-[11px] text-[#52525B] mt-1">
+                  <p className="font-mono text-[11px] text-[#8E8E98] mt-1">
                     ✦ Fully computed in-browser. Zero external API calls or telemetry logging.
                   </p>
                 </div>
@@ -303,7 +307,7 @@ export function InteractivePlayground() {
                   {/* Card 1: ATS Match Score */}
                   <div className="p-5 rounded-xl bg-[#121215] border border-white/[0.06]">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="font-mono text-xs text-[#52525B] tracking-wider uppercase">
+                      <span className="font-mono text-xs text-[#8E8E98] tracking-wider uppercase">
                         // ATS MATCH COEFFICIENT
                       </span>
                       <span className="font-mono text-[11px] px-2 py-0.5 rounded border border-white/[0.08] text-[#A1A1AA]">
@@ -338,7 +342,7 @@ export function InteractivePlayground() {
                   {/* Card 2: Token Budget & Context Window */}
                   <div className="p-5 rounded-xl bg-[#121215] border border-white/[0.06]">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-mono text-xs text-[#52525B] tracking-wider uppercase">
+                      <span className="font-mono text-xs text-[#8E8E98] tracking-wider uppercase">
                         // LLM TOKEN BUDGET (8K CONTEXT)
                       </span>
                       <span className="font-mono text-[11px] text-[#A1A1AA]">
@@ -348,7 +352,7 @@ export function InteractivePlayground() {
 
                     <div className="grid grid-cols-2 gap-3 mb-4">
                       <div>
-                        <span className="font-mono text-[10px] text-[#52525B] block">
+                        <span className="font-mono text-[10px] text-[#8E8E98] block">
                           DOCUMENT TOKENS
                         </span>
                         <span className="font-mono text-xl font-bold text-[#EDEDED]">
@@ -356,7 +360,7 @@ export function InteractivePlayground() {
                         </span>
                       </div>
                       <div>
-                        <span className="font-mono text-[10px] text-[#52525B] block">
+                        <span className="font-mono text-[10px] text-[#8E8E98] block">
                           EST. PROMPT FOOTPRINT
                         </span>
                         <span className="font-mono text-xl font-bold text-[#EDEDED]">
@@ -374,14 +378,14 @@ export function InteractivePlayground() {
                         transition={{ duration: prefersReducedMotion ? 0.01 : 0.4 }}
                       />
                     </div>
-                    <span className="font-mono text-[10px] text-[#52525B] mt-1.5 block">
+                    <span className="font-mono text-[10px] text-[#8E8E98] mt-1.5 block">
                       Budgeted with ~350 token system instruction overhead
                     </span>
                   </div>
 
                   {/* Card 3: Skill Vector Diagnostics */}
                   <div className="p-5 rounded-xl bg-[#121215] border border-white/[0.06]">
-                    <span className="font-mono text-xs text-[#52525B] tracking-wider uppercase block mb-3">
+                    <span className="font-mono text-xs text-[#8E8E98] tracking-wider uppercase block mb-3">
                       // KEYWORD VECTOR EXTRACTION
                     </span>
 
@@ -402,7 +406,7 @@ export function InteractivePlayground() {
                           ))}
                         </div>
                       ) : (
-                        <span className="font-mono text-xs text-[#52525B]">
+                        <span className="font-mono text-xs text-[#8E8E98]">
                           No target keywords matched yet.
                         </span>
                       )}
@@ -470,7 +474,7 @@ export function InteractivePlayground() {
 
                   <button
                     onClick={handleResetDiagnostic}
-                    className="font-mono text-xs px-2.5 py-1.5 rounded border border-white/[0.06] text-[#52525B] hover:text-white transition-all"
+                    className="font-mono text-xs px-2.5 py-1.5 rounded border border-white/[0.06] text-[#8E8E98] hover:text-white transition-all"
                   >
                     RESET
                   </button>
@@ -515,7 +519,7 @@ export function InteractivePlayground() {
                         } else if (line.includes('CURRENT STATE:')) {
                           lineStyle = 'text-amber-300 font-semibold'
                         } else if (line.startsWith(';') || line.startsWith('>>>') || line.startsWith('<<<')) {
-                          lineStyle = 'text-[#52525B]'
+                          lineStyle = 'text-[#8E8E98]'
                         }
 
                         return (

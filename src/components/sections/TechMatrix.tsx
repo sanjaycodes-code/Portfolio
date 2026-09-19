@@ -38,7 +38,7 @@ export function TechMatrix() {
       {/* Section Editorial Header */}
       <div className="mb-16 sm:mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/[0.08]">
         <div>
-          <span className="font-mono text-xs text-[#52525B] tracking-widest uppercase block mb-2">
+          <span className="font-mono text-xs text-[#8E8E98] tracking-widest uppercase block mb-2">
             // 02 TECHNICAL MATRIX
           </span>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-['Syne'] text-[#EDEDED] tracking-tight leading-[1.05]">

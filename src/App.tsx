@@ -1,9 +1,17 @@
+import { lazy, Suspense } from 'react'
 import { Navbar } from './components/layout/Navbar'
 import { Hero } from './components/sections/Hero'
 import { FeaturedProjects } from './components/sections/FeaturedProjects'
 import { TechMatrix } from './components/sections/TechMatrix'
 import { ExperienceJourney } from './components/sections/ExperienceJourney'
-import { InteractivePlayground } from './components/sections/InteractivePlayground'
+import { Footer } from './components/sections/Footer'
+
+// Performance: Code-split heavy interactive laboratory & terminal script
+const InteractivePlayground = lazy(() =>
+  import('./components/sections/InteractivePlayground').then((m) => ({
+    default: m.InteractivePlayground,
+  }))
+)
 
 export default function App() {
   return (
@@ -25,17 +33,24 @@ export default function App() {
         {/* Phase 4 Experience & Academic Journey (Honest Timeline) */}
         <ExperienceJourney />
 
-        {/* Phase 5 Interactive Laboratory & Playground (ATS Engine + TLS Post-Mortem) */}
-        <InteractivePlayground />
+        {/* Phase 5 Interactive Laboratory & Playground (Code Split & Deferred) */}
+        <Suspense
+          fallback={
+            <div className="py-24 max-w-6xl mx-auto px-4 w-full flex items-center justify-center min-h-[420px]">
+              <div className="font-mono text-xs text-[#8E8E98] flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#F97316] animate-pulse" />
+                <span>INITIALIZING TELEMETRY ENGINE...</span>
+              </div>
+            </div>
+          }
+        >
+          <InteractivePlayground />
+        </Suspense>
 
-        {/* Phase 6 Target Anchor */}
-        <section id="contact" className="py-20 max-w-6xl mx-auto px-4 sm:px-6 md:px-8 w-full border-t border-white/[0.05]">
-          <div className="flex items-center gap-2 font-mono text-xs text-[#52525B] tracking-widest uppercase mb-4">
-            <span className="w-2 h-2 rounded-full bg-[#F97316]" />
-            <span>// 05 EDITORIAL FOOTER &amp; CONTACT (COMING IN PHASE 6)</span>
-          </div>
-        </section>
+        {/* Phase 6 Editorial Contact Section & Footer */}
+        <Footer />
       </main>
     </div>
   )
 }
+

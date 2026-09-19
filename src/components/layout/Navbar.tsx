@@ -54,7 +54,7 @@ export function Navbar() {
             <span className="font-['Syne'] font-extrabold text-sm tracking-tight">
               SANJAY
             </span>
-            <span className="hidden sm:inline-block font-mono text-[10px] text-[#52525B] tracking-wider border-l border-white/[0.08] pl-2.5">
+            <span className="hidden sm:inline-block font-mono text-[10px] text-[#8E8E98] tracking-wider border-l border-white/[0.08] pl-2.5">
               SWE // AI
             </span>
           </a>
@@ -88,6 +88,7 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <a
               href="#contact"
+              aria-label="View Resume"
               className="font-mono text-xs text-[#EDEDED] hover:text-white px-3.5 py-1.5 rounded-full border border-white/[0.09] hover:border-white/[0.25] bg-white/[0.03] hover:bg-white/[0.06] transition-all flex items-center gap-1.5 shadow-sm"
             >
               <FileText className="w-3 h-3 text-[#A1A1AA]" />
@@ -124,7 +125,7 @@ export function Navbar() {
                 <span className="font-['Syne'] font-bold text-base text-[#EDEDED]">
                   SANJAY
                 </span>
-                <span className="font-mono text-xs text-[#52525B]">
+                <span className="font-mono text-xs text-[#8E8E98]">
                   // NAVIGATION
                 </span>
               </div>
