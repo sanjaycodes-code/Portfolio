@@ -47,6 +47,7 @@ export function Footer() {
   const prefersReducedMotion = useReducedMotion()
   const [emailCopied, setEmailCopied] = useState(false)
   const [draftCopied, setDraftCopied] = useState(false)
+  const [mailAppLaunched, setMailAppLaunched] = useState(false)
   const [selectedTemplate, setSelectedTemplate] = useState<InquiryTemplate>(INQUIRY_TEMPLATES[0])
 
   const emailSocial = SOCIAL_LINKS.find((s) => s.type === 'email')
@@ -92,17 +93,32 @@ export function Footer() {
     }
   }
 
+  const handleLaunchMailApp = async () => {
+    // 1. Copy email as immediate safety net in case OS has no desktop mail app
+    await copyToClipboard(emailAddress)
+    setMailAppLaunched(true)
+    setTimeout(() => setMailAppLaunched(false), 5000)
+
+    // 2. RFC 6068 CRLF encoding for Windows mailto compatibility
+    const safeBody = selectedTemplate.bodyText.replace(/\r?\n/g, '\r\n')
+    const mailUri = `mailto:${emailAddress}?subject=${encodeURIComponent(
+      selectedTemplate.subject
+    )}&body=${encodeURIComponent(safeBody)}`
+
+    // 3. Trigger without unloading current page
+    const tempLink = document.createElement('a')
+    tempLink.href = mailUri
+    document.body.appendChild(tempLink)
+    tempLink.click()
+    tempLink.remove()
+  }
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: prefersReducedMotion ? 'auto' : 'smooth'
     })
   }
-
-  // Pure, standard mailto without new-tab hazards
-  const mailtoHref = `mailto:${emailAddress}?subject=${encodeURIComponent(
-    selectedTemplate.subject
-  )}&body=${encodeURIComponent(selectedTemplate.bodyText)}`
 
   return (
     <footer
@@ -185,16 +201,35 @@ export function Footer() {
                     )}
                   </button>
 
-                  <a
-                    href={mailtoHref}
+                  <button
+                    onClick={handleLaunchMailApp}
+                    type="button"
                     aria-label="Launch default email client"
-                    className="font-mono text-xs px-3 py-1.5 rounded-lg border border-white/[0.08] bg-transparent hover:bg-white/[0.04] text-[#A1A1AA] hover:text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all flex items-center gap-1.5"
+                    className="font-mono text-xs px-3.5 py-1.5 rounded-lg border border-white/[0.1] bg-white/[0.03] hover:bg-white/[0.08] text-[#EDEDED] hover:text-white focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none transition-all flex items-center gap-1.5 cursor-pointer"
                   >
-                    <span>LAUNCH MAIL APP</span>
-                    <ExternalLink className="w-3 h-3 text-[#A1A1AA]" />
-                  </a>
+                    {mailAppLaunched ? (
+                      <>
+                        <Check className="w-3.5 h-3.5 text-emerald-400" />
+                        <span className="text-emerald-400 font-medium">TRIGGERING APP...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>LAUNCH MAIL APP</span>
+                        <ExternalLink className="w-3 h-3 text-[#A1A1AA]" />
+                      </>
+                    )}
+                  </button>
                 </div>
               </div>
+
+              {mailAppLaunched && (
+                <div className="mt-3 p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-[#EDEDED] flex items-center gap-2 animate-fadeIn">
+                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>
+                    Invoked system mail client. If no desktop app opened on your device, <strong>{emailAddress}</strong> is already copied to your clipboard!
+                  </span>
+                </div>
+              )}
             </div>
 
             {/* Subject Preset Picker & Pre-formatted Draft */}
