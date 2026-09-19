@@ -74,7 +74,7 @@ export function Hero() {
           {/* Original Editorial Headline Pairing Syne & Instrument Serif */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.4rem] font-extrabold tracking-tight font-['Syne'] uppercase leading-[1.02] sm:leading-[0.98] text-[#EDEDED] max-w-5xl mx-auto"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.4rem] font-bold tracking-[0.02em] font-['Syne'] uppercase leading-[0.96] sm:leading-[0.92] text-[#EDEDED] max-w-5xl mx-auto"
           >
             ENGINEERING{' '}
             <span className="font-['Instrument_Serif'] italic font-normal text-white lowercase tracking-normal px-1">
