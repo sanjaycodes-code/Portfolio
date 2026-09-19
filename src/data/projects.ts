@@ -5,19 +5,19 @@ export const PROJECTS: Project[] = [
     id: 'ai-resume-analyzer',
     index: '01 // 04',
     title: 'AI Resume Analyzer',
-    italicAccent: 'provider-abstracted LLM parsing pipeline',
+    italicAccent: '7-rule ATS heuristics & provider-agnostic AI',
     summary:
-      'Full-stack resume analysis application built end-to-end using Google Antigravity. Architected with a React/Vite and Tailwind frontend, Node/Express backend, and MongoDB/Mongoose. Implements a provider-abstracted LLM integration to structure raw resume text and execute contextual evaluations.',
-    buildStatus: 'in-development',
-    statusLabel: 'IN DEVELOPMENT // GOOGLE ANTIGRAVITY BUILD',
+      'Full-stack resume optimization platform engineered with a React/Vite frontend, Node/Express backend, and MongoDB. Scores resumes against 7 deterministic ATS heuristics while executing contextual job-description matching through an LLM-backed pipeline. Built with a provider-agnostic AI service layer to swap backends without application refactors, alongside PDF report generation and AI-powered bullet point rewriting using the STAR method.',
+    buildStatus: 'deployed',
+    statusLabel: 'DEPLOYED // PRODUCTION BUILD',
     architectureHighlights: [
-      'Engineered end-to-end utilizing Google Antigravity agentic workflows',
-      'Decoupled, provider-abstracted LLM interface layer for model flexibility',
-      'Structured entity parsing pipeline converting unstructured resumes into MongoDB schemas'
+      'Scores resumes against 7 deterministic ATS heuristics with contextual job-description matching via an LLM pipeline',
+      'Provider-agnostic AI service layer enabling seamless model swaps without touching core application logic',
+      'Production PDF report generation and AI-powered bullet rewriting implementing the STAR method'
     ],
     technicalHighlight: {
       label: 'Core Architecture',
-      value: 'Provider-Abstracted LLM Integration'
+      value: '7 Heuristics & Provider-Agnostic LLM Layer'
     },
     techStack: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'Google Antigravity'],
     category: 'ai-ml',
@@ -51,19 +51,19 @@ export const PROJECTS: Project[] = [
     id: 'campusloop',
     index: '03 // 04',
     title: 'CampusLoop',
-    italicAccent: 'solo rewrite: real-time sockets & Stripe booking',
+    italicAccent: 'real-time sockets & atomic booking concurrency',
     summary:
-      'Peer-to-peer campus device and gear rental platform. Originally built with a team during a hackathon (React, Firebase, Tailwind) where I implemented features, search, and modals. Restarted solo from scratch with a full-stack MERN stack, Socket.io for live availability broadcasts, race-condition-safe booking flows, and Stripe checkout with webhook fulfillment.',
-    buildStatus: 'solo-restart',
-    statusLabel: 'SOLO REWRITE // SHIPPED TO VERCEL & RENDER',
+      'Peer-to-peer campus device and gear rental platform completed as a solo full-stack rewrite. Features JWT authentication restricted to verified institute emails with protected routes and backend-enforced ownership checks. Broadcasts live equipment availability across clients via Socket.io and implements race-condition-safe booking using atomic MongoDB operations to prevent double-booking, integrated with Stripe checkout and webhook fulfillment.',
+    buildStatus: 'deployed',
+    statusLabel: 'DEPLOYED // SHIPPED TO VERCEL & RENDER',
     architectureHighlights: [
-      'Solo rewrite migrating from Firebase to Node/Express + MongoDB Atlas + Mongoose',
-      'Socket.io implementation broadcasting live equipment availability across clients',
-      'Date-range reservation flow with status states, Stripe checkout, and webhook fulfillment'
+      'Solo rewrite with JWT auth restricted to verified institute emails, protected routes, and backend-enforced ownership checks',
+      'Real-time availability broadcasts across clients via Socket.io with date-range reservation states',
+      'Race-condition-safe booking utilizing atomic MongoDB operations to eliminate double-booking concurrency bugs'
     ],
     technicalHighlight: {
-      label: 'Real-Time Architecture',
-      value: 'Socket.io + Stripe Webhook Flow'
+      label: 'Concurrency & Real-Time',
+      value: 'Socket.io + Atomic MongoDB Operations'
     },
     techStack: ['React', 'Vite', 'Node.js', 'Express', 'MongoDB Atlas', 'Socket.io', 'Stripe', 'Tailwind CSS'],
     category: 'fullstack',

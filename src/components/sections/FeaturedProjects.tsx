@@ -7,6 +7,8 @@ import type { ProjectBuildStatus } from '../../types'
 
 function getStatusBadgeStyle(status: ProjectBuildStatus) {
   switch (status) {
+    case 'deployed':
+      return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
     case 'in-development':
       return 'bg-amber-500/10 text-amber-300 border-amber-500/20'
     case 'paused':

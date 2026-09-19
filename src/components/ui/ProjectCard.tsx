@@ -71,17 +71,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 <Bot className="w-3.5 h-3.5 text-[#F97316]" />
                 <span className="text-[#EDEDED] text-[11px]">BUILD ENGINE: GOOGLE ANTIGRAVITY</span>
               </div>
-              <span className="px-2 py-0.5 rounded bg-white/[0.05] text-[10px] text-amber-300 border border-amber-300/20">
-                ACTIVE BUILD
+              <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-[10px] text-emerald-400 border border-emerald-500/20">
+                DEPLOYED
               </span>
             </div>
 
             {/* Architecture Overview */}
             <div className="p-3.5 rounded-lg bg-black/40 border border-white/[0.06] text-[11px] text-[#A1A1AA] space-y-1.5 leading-relaxed">
               <div className="text-white/40">// Architectural Pipeline</div>
-              <div><span className="text-[#EDEDED]">01. Client:</span> React/Vite + Tailwind Frontend</div>
-              <div><span className="text-[#EDEDED]">02. API:</span> Node.js / Express + Mongoose Schemas</div>
-              <div><span className="text-[#EDEDED]">03. Intelligence:</span> Provider-Abstracted LLM Interface</div>
+              <div><span className="text-[#EDEDED]">01. Pipeline:</span> 7 deterministic ATS rules + JD matching</div>
+              <div><span className="text-[#EDEDED]">02. Architecture:</span> Provider-agnostic AI layer (swap LLMs)</div>
+              <div><span className="text-[#EDEDED]">03. Features:</span> PDF report export + STAR bullet rewriting</div>
             </div>
           </div>
         )
@@ -131,9 +131,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {/* Architectural Modules */}
             <div className="p-3.5 rounded-lg bg-black/40 border border-white/[0.06] space-y-1.5 text-[11px] text-[#A1A1AA]">
               <div className="text-white/40">// Scope &amp; Implementation</div>
+              <div><span className="text-[#EDEDED]">Auth:</span> Verified institute email JWT + route guards</div>
               <div><span className="text-[#EDEDED]">Real-Time:</span> Socket.io live availability broadcasts</div>
-              <div><span className="text-[#EDEDED]">Booking:</span> Date-range booking flow with status states</div>
-              <div><span className="text-[#EDEDED]">Payments:</span> Stripe test checkout + webhook fulfillment</div>
+              <div><span className="text-[#EDEDED]">Concurrency:</span> Atomic MongoDB ops (no double-booking)</div>
             </div>
           </div>
         )

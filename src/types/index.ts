@@ -1,5 +1,5 @@
 export type ProjectCategory = 'ai-ml' | 'systems' | 'fullstack'
-export type ProjectBuildStatus = 'in-development' | 'paused' | 'solo-restart' | 'data-pipeline'
+export type ProjectBuildStatus = 'deployed' | 'in-development' | 'paused' | 'solo-restart' | 'data-pipeline'
 
 export interface ProjectTechnicalHighlight {
   label: string

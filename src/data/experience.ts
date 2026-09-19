@@ -26,10 +26,10 @@ export const EXPERIENCES: ExperienceItem[] = [
     statusType: 'solo-restart',
     description: [
       'Originally built with a team during a collegiate hackathon (React, Firebase, Tailwind) where I developed the UI features, search, filters, and modal flows; left roughly halfway complete at the end of the sprint.',
-      'Restarted solo from scratch with a complete MERN rewrite to master the full backend lifecycle: Node/Express, MongoDB Atlas, and Mongoose.',
-      'Engineered live inventory status broadcasting with Socket.io and integrated a date-range booking flow backed by Stripe test checkout and webhooks.'
+      'Completed a full-stack solo MERN rewrite with JWT authentication restricted to verified institute emails, protected routes, and backend-enforced ownership checks.',
+      'Engineered live inventory status broadcasting via Socket.io alongside race-condition-safe booking flows utilizing atomic MongoDB operations to eliminate double-booking.'
     ],
-    tags: ['Solo Rebuild', 'Node/Express', 'MongoDB Atlas', 'Socket.io', 'Stripe Webhooks']
+    tags: ['Solo Rewrite', 'Node/Express', 'MongoDB Atlas', 'Socket.io', 'Atomic Operations']
   },
   {
     id: 'assetflow-journey',
