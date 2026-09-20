@@ -13,8 +13,8 @@ export interface ResumePreset {
 
 export const ROLE_PRESETS: RolePreset[] = [
   {
-    id: 'swe-ai-intern',
-    label: 'Full-Stack / AI Intern',
+    id: 'swe-ai',
+    label: 'Full-Stack / AI',
     description: 'Modern full-stack web applications with LLM integration and real-time systems',
     targetKeywords: [
       'React',
@@ -31,7 +31,7 @@ export const ROLE_PRESETS: RolePreset[] = [
   },
   {
     id: 'backend-systems',
-    label: 'Backend & Systems Intern',
+    label: 'Backend & Systems',
     description: 'Server architectures, database schemas, and network lifecycle debugging',
     targetKeywords: [
       'Node.js',

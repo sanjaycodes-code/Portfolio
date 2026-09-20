@@ -50,14 +50,14 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: 'nit-durgapur',
     index: '// 03.4',
     period: '2023 — Present',
-    title: 'B.Tech in Civil Engineering (Entering Third Year)',
+    title: 'B.Tech Undergraduate (Entering Third Year)',
     organization: 'National Institute of Technology (NIT), Durgapur',
     badge: 'UNDERGRADUATE',
     statusType: 'academic',
     description: [
-      'Undergraduate student at an Institute of National Importance, entering third year.',
-      'Pairing core engineering analytical rigor with an independent dedication to software architecture, data modeling, and modern developer tooling.'
+      'Undergraduate at an Institute of National Importance, entering third year.',
+      'Pivoted from traditional engineering coursework into an intensive self-directed software and AI trajectory — building and shipping production-deployed products alongside degree studies rather than waiting until graduation.'
     ],
-    tags: ['NIT Durgapur', 'Engineering Fundamentals', 'Analytical Modeling']
+    tags: ['NIT Durgapur', 'Analytical Rigor', 'Self-Directed SWE & AI']
   }
 ]

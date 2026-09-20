@@ -66,7 +66,7 @@ export function Navbar() {
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#F97316]"></span>
             </span>
             <span className="font-mono text-[11px] text-[#A1A1AA] tracking-tight">
-              OPEN FOR INTERNSHIPS
+              OPEN TO SOFTWARE &amp; AI ROLES
             </span>
           </div>
 
@@ -166,7 +166,7 @@ export function Navbar() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F97316] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F97316]"></span>
                 </span>
-                <span>OPEN FOR SOFTWARE &amp; AI INTERNSHIPS</span>
+                <span>OPEN TO SOFTWARE &amp; AI ROLES</span>
               </div>
 
               <a

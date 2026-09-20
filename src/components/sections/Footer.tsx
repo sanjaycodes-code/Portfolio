@@ -26,11 +26,11 @@ interface InquiryTemplate {
 
 const INQUIRY_TEMPLATES: InquiryTemplate[] = [
   {
-    id: 'internship',
-    label: 'Internship Opportunity',
-    subject: 'Software / AI Engineering Internship Opportunity',
+    id: 'engineering-role',
+    label: 'Engineering Opportunity',
+    subject: 'Software / AI Engineering Opportunity',
     bodyText:
-      'Hi Sanjay,\n\nI came across your portfolio and would like to discuss an engineering internship opportunity with our team.\n\nRole: \nCompany: \nLocation / Mode: '
+      'Hi Sanjay,\n\nI came across your portfolio and would like to discuss a software/AI engineering opportunity with our team.\n\nRole: \nCompany: \nLocation / Mode: '
   },
   {
     id: 'tech-discussion',
@@ -146,7 +146,7 @@ export function Footer() {
         </div>
 
         <p className="font-['Space_Grotesk'] text-sm text-[#A1A1AA] max-w-md leading-relaxed">
-          Open to software engineering and applied AI internship roles for Summer / Fall 2026.
+          Open to software engineering and applied AI roles.
           Prepared to take end-to-end ownership from architecture to production deployment.
         </p>
       </div>
@@ -164,7 +164,7 @@ export function Footer() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F97316]"></span>
                 </span>
                 <span className="font-mono text-xs text-[#EDEDED] font-medium tracking-tight">
-                  OPEN FOR INTERNSHIPS // 2026
+                  OPEN TO SOFTWARE &amp; AI ROLES // 2026
                 </span>
               </div>
 
@@ -490,7 +490,7 @@ export function Footer() {
                 </span>
               </div>
               <p className="font-['Space_Grotesk'] text-xs text-[#A1A1AA] leading-relaxed">
-                Generally active during IST engineering hours. Fast response on email, LinkedIn, and X for internship screenings or technical discussions.
+                Generally active during IST engineering hours. Fast response on email, LinkedIn, and X for engineering role screenings or technical discussions.
               </p>
             </div>
           </div>
