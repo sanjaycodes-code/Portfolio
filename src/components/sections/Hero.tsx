@@ -83,12 +83,12 @@ export function Hero() {
               AI.
             </motion.h1>
 
-            {/* Bio Line: Reflects Civil Engineering at NIT Durgapur + Self-directed SWE/AI */}
+            {/* Bio Line: Undergraduate at NIT Durgapur, self-directed builder */}
             <motion.p
               variants={itemVariants}
               className="text-sm sm:text-base md:text-lg text-[#A1A1AA] font-['Space_Grotesk'] leading-relaxed max-w-xl"
             >
-              B.Tech in Civil Engineering at NIT Durgapur, pursuing an intensive self-directed curriculum in full-stack web architecture, distributed systems, and applied AI pipelines.
+              Undergraduate at NIT Durgapur, building resilient full-stack products and applied AI experiences through an intensive self-directed engineering track.
             </motion.p>
 
             {/* Two Action CTAs: Existing Button System */}
@@ -131,10 +131,10 @@ export function Hero() {
               </div>
               <div>
                 <div className="text-xl sm:text-2xl font-bold text-[#EDEDED] tracking-tight font-['Syne'] truncate">
-                  Civil Engg.
+                  Full-Stack &amp; AI
                 </div>
                 <div className="text-[11px] font-mono text-[#8E8E98] uppercase tracking-wider mt-1">
-                  B.Tech @ NIT DGP
+                  Focus
                 </div>
               </div>
               <div>
