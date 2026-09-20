@@ -118,4 +118,26 @@ body {
   background: #3f3f46;
 }
 
+/* Gentle subtle floating drift for editorial cards & mascots */
+@keyframes subtle-drift {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0.8deg);
+  }
+}
+
+.animate-subtle-drift {
+  animation: subtle-drift 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-subtle-drift {
+    animation: none !important;
+  }
+}
+
+
 

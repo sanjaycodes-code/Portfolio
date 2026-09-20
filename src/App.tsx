@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { Navbar } from './components/layout/Navbar'
 import { Hero } from './components/sections/Hero'
+import { About } from './components/sections/About'
 import { FeaturedProjects } from './components/sections/FeaturedProjects'
 import { TechMatrix } from './components/sections/TechMatrix'
 import { ExperienceJourney } from './components/sections/ExperienceJourney'
@@ -23,6 +24,9 @@ export default function App() {
       <main className="flex-1 flex flex-col">
         {/* Editorial Hero Section */}
         <Hero />
+
+        {/* Editorial About & Profile Section */}
+        <About />
 
         {/* Phase 3 Featured Projects: Agency Case-Study Layout with 3D Tilt Cards */}
         <FeaturedProjects />
