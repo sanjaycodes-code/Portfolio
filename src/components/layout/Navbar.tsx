@@ -87,13 +87,15 @@ export function Navbar() {
           {/* Action Button & Mobile Toggle */}
           <div className="flex items-center gap-3">
             <a
-              href="#contact"
+              href="/resume-sanjay-viswanath.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="View Resume"
-              className="font-mono text-xs text-[#EDEDED] hover:text-white px-3.5 py-1.5 rounded-full border border-white/[0.09] hover:border-white/[0.25] bg-white/[0.03] hover:bg-white/[0.06] transition-all flex items-center gap-1.5 shadow-sm"
+              className="group font-mono text-xs text-[#EDEDED] hover:text-white px-3.5 py-1.5 rounded-full border border-white/[0.09] hover:border-white/[0.25] bg-white/[0.03] hover:bg-white/[0.06] transition-all flex items-center gap-1.5 shadow-sm"
             >
               <FileText className="w-3 h-3 text-[#A1A1AA]" />
               <span className="hidden sm:inline">RESUME</span>
-              <ArrowUpRight className="w-3 h-3 opacity-60 group-hover:opacity-100" />
+              <ArrowUpRight className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity" />
             </a>
 
             {/* Mobile Hamburger Trigger */}
@@ -168,7 +170,10 @@ export function Navbar() {
               </div>
 
               <a
-                href="#contact"
+                href="/resume-sanjay-viswanath.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Resume"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full py-3 rounded-xl border border-white/[0.15] bg-white/[0.05] hover:bg-white/[0.1] text-center font-mono text-xs text-white tracking-wider flex items-center justify-center gap-2 transition-all"
               >

@@ -8,7 +8,8 @@ import {
   ChevronUp,
   Sparkles,
   MessageSquare,
-  Calendar
+  Calendar,
+  FileText
 } from 'lucide-react'
 import { SOCIAL_LINKS } from '../../data/socials'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
@@ -447,6 +448,33 @@ export function Footer() {
                 <div className="flex items-center gap-2 font-mono text-xs text-[#A1A1AA] group-hover:text-white">
                   <span className="text-[10px] uppercase px-2 py-0.5 rounded bg-white/[0.04] text-[#A1A1AA] border border-white/[0.05] hidden sm:inline-block">
                     Direct Booking
+                  </span>
+                  <ArrowUpRight className="w-4 h-4 text-[#A1A1AA] group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                </div>
+              </a>
+
+              {/* Resume / Curriculum Vitae */}
+              <a
+                href="/resume-sanjay-viswanath.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Resume (opens in a new tab)"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-[#080809] border border-white/[0.06] hover:border-white/[0.18] hover:bg-white/[0.02] text-[#EDEDED] hover:text-white transition-all group focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:outline-none"
+              >
+                <div className="flex items-center gap-3">
+                  <FileText className="w-4 h-4 text-[#A1A1AA] group-hover:text-[#F97316] transition-colors" />
+                  <div>
+                    <span className="font-['Syne'] text-sm font-semibold block">
+                      Resume / CV
+                    </span>
+                    <span className="font-mono text-[11px] text-[#A1A1AA]">
+                      resume-sanjay-viswanath.pdf
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 font-mono text-xs text-[#A1A1AA] group-hover:text-white">
+                  <span className="text-[10px] uppercase px-2 py-0.5 rounded bg-white/[0.04] text-[#A1A1AA] border border-white/[0.05] hidden sm:inline-block">
+                    PDF Document
                   </span>
                   <ArrowUpRight className="w-4 h-4 text-[#A1A1AA] group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                 </div>
