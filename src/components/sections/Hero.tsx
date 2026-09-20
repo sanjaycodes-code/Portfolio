@@ -87,21 +87,16 @@ export function Hero() {
             MODELS.
           </motion.h1>
 
-          {/* Value Proposition Body Copy in Space Grotesk */}
+          {/* Value Proposition Body Copy in Space Grotesk with Instrument Serif accent */}
           <motion.p
             variants={itemVariants}
-            className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-[#A1A1AA] max-w-2xl mx-auto font-['Space_Grotesk'] leading-relaxed font-normal"
+            className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-[#EDEDED] max-w-2xl mx-auto font-['Space_Grotesk'] leading-relaxed font-normal"
           >
-            I’m an undergraduate at NIT Durgapur pursuing an intensive self-directed
-            track in full-stack web engineering and applied AI. Creator of{' '}
-            <span className="text-[#EDEDED] font-medium underline decoration-white/20 underline-offset-4">
-              CampusLoop
-            </span>
-            ,{' '}
-            <span className="text-[#EDEDED] font-medium underline decoration-white/20 underline-offset-4">
-              AssetFlow
-            </span>
-            , and specialized LLM diagnostic tools.
+            Hi I&apos;m Sanjay — I turn curiosity into code, building full-stack products and{' '}
+            <span className="font-['Instrument_Serif'] italic font-normal text-white lowercase tracking-normal px-1 text-xl sm:text-2xl md:text-[1.75rem] inline-block">
+              AI-powered experiences
+            </span>{' '}
+            that actually do something.
           </motion.p>
 
           {/* Action Trigger Group */}
