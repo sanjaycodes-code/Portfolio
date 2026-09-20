@@ -147,21 +147,38 @@ export function InteractivePlayground() {
       <div className="mb-12 sm:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/[0.08]">
         <div>
           <span className="font-mono text-xs text-[#8E8E98] tracking-widest uppercase block mb-2">
-            // 04 INTERACTIVE LABORATORY
+            04 / TERMINAL
           </span>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-['Syne'] text-[#EDEDED] tracking-[0.02em] leading-[1.02] sm:leading-[0.98]">
-            ALGORITHMIC{' '}
+            INTERACTIVE{' '}
             <span className="font-['Instrument_Serif'] italic font-normal text-white lowercase tracking-normal">
-              telemetry
+              engineering
             </span>{' '}
-            &amp; SYSTEMS.
+            LAB.
           </h2>
         </div>
 
         <p className="font-['Space_Grotesk'] text-sm text-[#A1A1AA] max-w-md leading-relaxed">
-          Zero simulated fluff. Live client-side token budgeting and ATS keyword matching, paired
-          with the actual network post-mortem that isolated the AssetFlow TLS timeout.
+          Hands-on telemetry and debugging tools running directly in your browser. Select a console mode below to experiment.
         </p>
+      </div>
+
+      {/* Mode Explanatory Guide Row */}
+      <div className="mb-6 grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-mono">
+        <div className="p-3 rounded-xl bg-[#121215] border border-white/[0.06] flex items-start sm:items-center gap-2.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#F97316] shrink-0 mt-1 sm:mt-0" />
+          <div className="flex flex-wrap items-center gap-x-1.5">
+            <span className="text-[#EDEDED] font-semibold">// 04.1 ATS TOKEN ENGINE:</span>
+            <span className="text-[#A1A1AA]">Test client-side resume scoring and keyword extraction in real time</span>
+          </div>
+        </div>
+        <div className="p-3 rounded-xl bg-[#121215] border border-white/[0.06] flex items-start sm:items-center gap-2.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8] shrink-0 mt-1 sm:mt-0" />
+          <div className="flex flex-wrap items-center gap-x-1.5">
+            <span className="text-[#EDEDED] font-semibold">// 04.2 TLS DIAGNOSTIC SHELL:</span>
+            <span className="text-[#A1A1AA]">Step through an authentic network handshake debugging session</span>
+          </div>
+        </div>
       </div>
 
       {/* Main Agency Console Container */}

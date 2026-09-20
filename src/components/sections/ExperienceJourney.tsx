@@ -39,20 +39,19 @@ export function ExperienceJourney() {
       <div className="mb-16 sm:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/[0.08]">
         <div>
           <span className="font-mono text-xs text-[#8E8E98] tracking-widest uppercase block mb-2">
-            // 03 EXPERIENCE &amp; JOURNEY
+            03 / JOURNEY
           </span>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-['Syne'] text-[#EDEDED] tracking-[0.02em] leading-[1.02] sm:leading-[0.98]">
-            ACADEMIC{' '}
+            ENGINEERING{' '}
             <span className="font-['Instrument_Serif'] italic font-normal text-white lowercase tracking-normal">
-              foundations
+              journey
             </span>{' '}
-            &amp; SPRINTS.
+            &amp; MILESTONES.
           </h2>
         </div>
 
         <p className="font-['Space_Grotesk'] text-sm text-[#A1A1AA] max-w-md leading-relaxed">
-          An honest developmental trajectory: balancing engineering rigor at NIT Durgapur with an 
-          independent, self-directed curriculum and practical hackathon building.
+          A transparent timeline tracing my academic progression at NIT Durgapur alongside hackathon builds, solo rebuilds, and autonomous project sprints.
         </p>
       </div>
 

@@ -21,7 +21,7 @@ export function About({ animateMascot = true }: AboutProps) {
       <div className="mb-10 sm:mb-14 pb-6 border-b border-white/[0.08] flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="font-mono text-xs text-[#8E8E98] tracking-widest uppercase">
-            // PROFILE &amp; PHILOSOPHY
+            // ABOUT / PROFILE &amp; PHILOSOPHY
           </span>
         </div>
         <div className="hidden sm:flex items-center gap-2 font-mono text-[11px] text-[#71717A]">

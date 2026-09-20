@@ -213,6 +213,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <span className="text-[#52525B] group-hover:text-[#A1A1AA] transition-colors uppercase tracking-wider text-[11px]">
               {project.id.toUpperCase()}
             </span>
+            <span
+              className={`font-mono text-[9px] px-2 py-0.5 rounded-full border uppercase tracking-tight ${
+                project.buildStatus === 'deployed'
+                  ? 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20'
+                  : project.buildStatus === 'paused'
+                  ? 'text-amber-400 bg-amber-400/10 border-amber-400/20'
+                  : 'text-[#38BDF8] bg-[#38BDF8]/10 border-[#38BDF8]/20'
+              }`}
+            >
+              {project.buildStatus.replace('-', ' ')}
+            </span>
           </div>
 
           <div className="flex items-center gap-2">

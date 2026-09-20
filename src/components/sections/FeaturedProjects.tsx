@@ -43,20 +43,19 @@ export function FeaturedProjects() {
       <div className="mb-20 sm:mb-28 border-b border-white/[0.08] pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <span className="font-mono text-xs text-[#8E8E98] tracking-widest uppercase block mb-2">
-            // 01 SELECTED WORKS
+            01 / WORK
           </span>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-['Syne'] text-[#EDEDED] tracking-[0.02em] leading-[1.02] sm:leading-[0.98]">
-            ARCHITECTURAL{' '}
+            FEATURED{' '}
             <span className="font-['Instrument_Serif'] italic font-normal text-white lowercase tracking-normal">
-              case studies
+              engineering
             </span>{' '}
-            &amp; SYSTEMS.
+            PROJECTS.
           </h2>
         </div>
 
-        <p className="font-['Space_Grotesk'] text-sm text-[#A1A1AA] max-w-sm leading-relaxed">
-          Four authentic engineering builds reflecting real development lifecycles, 
-          active rewrites, and network-level debugging.
+        <p className="font-['Space_Grotesk'] text-sm text-[#A1A1AA] max-w-md leading-relaxed">
+          Production-deployed full-stack architectures and applied AI systems — each with verified live demos and transparent development lifecycles.
         </p>
       </div>
 

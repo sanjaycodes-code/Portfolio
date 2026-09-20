@@ -39,20 +39,19 @@ export function TechMatrix() {
       <div className="mb-16 sm:mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/[0.08]">
         <div>
           <span className="font-mono text-xs text-[#8E8E98] tracking-widest uppercase block mb-2">
-            // 02 TECHNICAL MATRIX
+            02 / STACK
           </span>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-['Syne'] text-[#EDEDED] tracking-[0.02em] leading-[1.02] sm:leading-[0.98]">
             VERIFIED{' '}
             <span className="font-['Instrument_Serif'] italic font-normal text-white lowercase tracking-normal">
               stack
             </span>{' '}
-            &amp; TOOLING.
+            &amp; ARCHITECTURE.
           </h2>
         </div>
 
         <p className="font-['Space_Grotesk'] text-sm text-[#A1A1AA] max-w-md leading-relaxed">
-          Zero arbitrary percentages or synthetic skill bars. A transparent index of technologies 
-          and frameworks deployed across real hackathon builds and active projects.
+          Zero arbitrary percentages or synthetic skill bars. A transparent index of technologies mapped directly to production builds.
         </p>
       </div>
 
